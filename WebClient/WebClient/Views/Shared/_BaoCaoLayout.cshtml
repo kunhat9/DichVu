@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "BaoCao";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="page-header page-header-default">
+    <div class="page-header-content" style="background-color: #fcfcfc;">
+        <div class="page-title" style="padding: 20px 0;">
+            <h4>
+                <a href="javascript:void(0);" onclick="history.go(-1);"><i class="icon-arrow-left52 position-left"></i></a>
+                <span class="text-semibold">Báo cáo thống kê</span>
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="div-h100 div-top69">
+    <div class="panel-body div-h100-body">
+        <div class="two-columns form-group">
+            <div class="left-full">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" id="datefrom" value="" class="form-control datefrom" placeholder="Ngày bắt đầu">
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <input type="text" value="" id="dateto" class="form-control dateto" placeholder="Ngày kết thúc">
+                    </div>
+                </div>
+            </div>
+            <div class="right-fixed">
+                <button type="button" id="" class="btn btn-primary btnStatistic">Thống kê</button>
+            </div>
+        </div>
+        <div class="div-h100 div-top56">
+            <div class="div-h100-body">
+                <div class="two-columns form-group">
+                    <div class="breadcrumb-elements">
+                        <button type="button" class="btn btn-success f-right" onclick="fnExcelReport();">In ra Excel</button>
+                    </div>
+                </div>
+                <div class="div-h100 div-top56">
+                    <div class="div-h100-body">
+                        <iframe id="txtArea1" style="display:none"></iframe>
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    table {
+        table-layout: fixed;
+    }
+    thead, tbody {
+        display: block;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('.datefrom,.dateto').pickadate({
+            selectMonths: true,
+            selectYears: true,
+            format: "yyyy/mm/dd"
+        });
+    });
+</script>

@@ -1,0 +1,274 @@
+11:49:32
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+13:56:07
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+13:59:28
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+14:04:17
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+14:36:54
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+14:43:38
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+14:44:28
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+14:46:02
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+15:16:38
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+15:25:57
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106
+
+15:42:37
+::1
+System.Exception: SelectAll::'TB_PRODUCTS'.
+Invalid object name 'TB_PRODUCTS'. ---> System.Data.SqlClient.SqlException: Invalid object name 'TB_PRODUCTS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, SqlTransaction transaction, CommandType commandType, String commandText, SqlParameter[] commandParameters, SqlConnectionOwnership connectionOwnership) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 828
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 953
+   at CORE.Helpers.SqlHelper.ExecuteReader(SqlConnection connection, CommandType commandType, String commandText) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 934
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 441
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.SelectAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 450
+   at CORE.Services.TB_PRODUCTSFactory.GetAll() in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_PRODUCTSFactory.cs:line 24
+   at WebClient.Controllers.HomeController.Index() in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\HomeController.cs:line 106

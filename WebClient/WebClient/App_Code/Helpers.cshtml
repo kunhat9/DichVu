@@ -1,0 +1,35 @@
+﻿@helper Paging(int Page, int StartPage, int EndPage, int TotalPage, string Controller, string idForm, string idTable)
+{
+    <nav aria-label="Page navigation" class="navbar-right">
+        <ul class="pagination">
+            @if (Page > 1)
+            {
+                <li>
+                    <a href="javascript:;" onclick="Marc21.GotoPage('@Controller', '@idForm', '@idTable', '1')" aria-label="Previous">
+                        <span aria-hidden="true">«</span>
+                    </a>
+                </li>
+            }
+            @for (int i = StartPage; i <= EndPage; i++)
+            {
+                if (i == Page)
+                {
+                    <li><a class="active">@i</a></li>
+                }
+                else
+                {
+                    <li><a href="javascript:;" onclick="Marc21.GotoPage('@Controller', '@idForm', '@idTable', '@i')">@i</a></li>
+                }
+            }
+            @if (Page < TotalPage)
+            {
+                <li>
+                    <a href="javascript:;" onclick="Marc21.GotoPage('@Controller', '@idForm', '@idTable', '@TotalPage')" aria-label="Next">
+                        <span aria-hidden="true">»</span>
+                    </a>
+                </li>
+
+            }
+        </ul>
+    </nav>
+}

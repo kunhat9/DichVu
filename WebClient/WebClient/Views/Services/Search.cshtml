@@ -1,0 +1,168 @@
+﻿@using CORE.Tables
+@using WebClient.Configuration
+
+@{
+    ViewBag.Title = "Dịch vụ";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+    string group = ViewBag.Group;
+    List<TB_TYPES> types = ViewBag.Types;
+    List<TB_SERVICES> services = ViewBag.Services;
+    List<TB_FILES> files = (List<TB_FILES>)ViewBag.Files;
+}
+
+<div class="col-md-3">
+    <div class="menu-product hidden-xs">
+        <h3>
+            @if (types.Any(x => x.TypeCode == group))
+            {
+                <span>
+                    <a href="#">
+                        @if (types.Where(x => x.TypeCode == group).Select(x => x.TypeType).FirstOrDefault() == "VP")
+                        {
+                            <text>Văn phòng trọn gói</text>
+                        }
+                        else
+                        {
+                            <text>Tổ chức sự kiện</text>
+}
+                    </a>
+                </span>
+            }
+            else
+            {
+                <span><a href="/Products">Dịch vụ</a></span>
+            }
+        </h3>
+        @if (types.Count > 0)
+        {
+            <ul class="level0">
+                @foreach (TB_TYPES item in types)
+                {
+                    <li class="sub0"><span><a href="/Services/Search?group=@item.TypeCode"><i class="fa fa-check"></i>@item.TypeName</a></span></li>
+                }
+            </ul>
+        }
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-product ul.level1').slideDown();
+        });
+    </script>
+</div>
+<div class="col-md-9">
+    <div class="breadcrumb clearfix">
+        <ul>
+            <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="home">
+                <a title="Đến trang chủ" href="/" itemprop="url"><span itemprop="title">Trang chủ</span></a>
+            </li>
+            @if (types.Any(x => x.TypeCode == group))
+            {
+                <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="category17 icon-li">
+                    <div class="link-site-more">
+                        <a title="" href="/Services/Search?group=@types.Where(x => x.TypeCode == group).Select(x => x.TypeCode).FirstOrDefault()" itemprop="url">
+                            <span itemprop="title">@types.Where(x => x.TypeCode == group).Select(x => x.TypeName).FirstOrDefault()</span>
+                            @*<img width="13" height="13" src="/Images/icon-link-more.jpg">*@
+                        </a>
+                        @*<ul class="s-c-n">
+                                <li class="sprites">
+                                    <a title="Áo thun nữ" href="/san-pham/ao-thun-nu-3593">
+                                        Áo thun nữ
+                                    </a>
+                                </li>
+                                <li class="sprites">
+                                    <a title="Áo sơ mi nữ" href="/san-pham/ao-so-mi-nu-3594">
+                                        Áo sơ mi nữ
+                                    </a>
+                                </li>
+                                <li class="sprites">
+                                    <a title="Váy nữ" href="/san-pham/vay-nu-3595">
+                                        Váy nữ
+                                    </a>
+                                </li>
+                                <li class="sprites">
+                                    <a title="Quần nữ" href="/san-pham/quan-nu-3596">
+                                        Quần nữ
+                                    </a>
+                                </li>
+                            </ul>*@
+                    </div>
+                </li>
+                @*<li class="icon-li"><strong>catList.Where(x => x.CategoryCode == group).Select(x => x.CategoryName).FirstOrDefault()</strong></li>*@
+            }
+            else
+            {
+                <li class="icon-li"><strong>Tìm kiếm</strong></li>
+            }
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $(".link-site-more").hover(function () { $(this).find(".s-c-n").show(); }, function () { $(this).find(".s-c-n").hide(); });
+    </script>
+    <section class="product-content clearfix">
+        <h1 class="title clearfix"><span>Dịch vụ</span></h1>
+        <nav class="navbar navbar-default product-filter">
+            <ul class="display">
+                <li id="grid" class="active grid"><a href="#" title="Grid"><i class="fa fa-th-large"></i></a></li>
+                <li id="list" class="list"><a href="#" title="List"><i class="fa fa-th-list"></i></a></li>
+            </ul>
+            <div class="limit">
+                <span>Sản phẩm/trang</span>
+                <select id="lblimit" name="lblimit" class="nb_item" onchange="window.location.href = this.options[this.selectedIndex].value">
+                    <option value="?limit=10">10</option>
+                    <option selected="selected" value="?limit=12">12</option>
+                    <option value="?limit=20">20</option>
+                    <option value="?limit=50">50</option>
+                    <option value="?limit=100">100</option>
+                    <option value="?limit=250">250</option>
+                    <option value="?limit=500">500</option>
+                </select>
+            </div>
+            <div class="sort">
+                <span>Sắp xếp</span>
+                <select class="selectProductSort" id="lbsort" onchange="window.location.href = this.options[this.selectedIndex].value">
+                    <option selected="selected" value="?sort=index&amp;order=asc">Mặc định</option>
+                    <option value="?sort=price&amp;order=asc">Giá tăng dần</option>
+                    <option value="?sort=price&amp;order=desc">Giá giảm dần</option>
+                    <option value="?sort=name&amp;order=asc">Tên sản phẩm: A to Z</option>
+                    <option value="?sort=name&amp;order=desc">Tên sản phẩm: Z to A</option>
+                </select>
+            </div>
+        </nav>
+        <div class="product-block product-grid row clearfix">
+            @if (services.Count == 0)
+            {
+                <div>Không tìm thấy dịch vụ</div>
+            }
+            else
+            {
+                foreach (TB_SERVICES item in services)
+                {
+                    <div class="col-md-3 col-sm-3 col-xs-12 product-resize product-item-box fixheight" style="height: 257px;">
+                        <div class="product-item">
+                            <div class="image image-resize" style="height: 150px;">
+                                <a href="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==""+item.ServiceId).Select(x=>x.FilePath).FirstOrDefault())" title="@item.ServiceName">
+                                    <img class="img-responsive" src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==""+item.ServiceId).Select(x=>x.FilePath).FirstOrDefault())" alt="@item.ServiceName" title="@item.ServiceName">
+                                </a>
+                                <div class="ribbon">
+                                    <span class="hot">Hot</span>
+                                </div>
+                                <div class="newst-img"><a href="/Services/Detail?Id=@item.ServiceId" title="@item.ServiceName"><i class="fa fa-search"></i></a></div>
+                            </div>
+                            <div class="right-block">
+                                <h2 class="name">
+                                    <a href="/Services/Detail?Id=@item.ServiceId" title="@item.ServiceName">@item.ServiceName</a>
+                                </h2>
+                                <div class="price">
+                                    <span class="price-new">@string.Format("{0:N0}", @item.ServicePrice)&nbsp;₫</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+    <!--Template--
+    --End-->
+</div>

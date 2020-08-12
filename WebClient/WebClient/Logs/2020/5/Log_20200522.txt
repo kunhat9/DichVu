@@ -1,0 +1,6 @@
+01:43:11
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebClient.Controllers.AjaxController.UpdateSerivceType(String type_code, String type_name) in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\AjaxController.cs:line 173

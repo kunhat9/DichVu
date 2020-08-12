@@ -1,0 +1,28 @@
+﻿@using CORE.Tables
+@{
+    List<TB_TYPE_DETAILS> details = ViewBag.Details;
+    List<TB_SERVICE_DETAILS> sDetails = ViewBag.SDetails;
+}
+
+@foreach (TB_TYPE_DETAILS item in details)
+{
+    <div class="form-group">
+        <input type="hidden" value="@item.TypeDetailId" class="detailId" />
+        <input type="hidden" value="@item.TypeDetailType" class="detailType" />
+        <label class="control-label col-md-4" style="font-style: italic;font-weight: bolder;">@item.TypeDetailName</label>
+        <div class="col-md-8">
+            @if (item.TypeDetailType == "BOOL")
+            {
+                <select class="form-control detailValue" tabindex="-1" aria-hidden="true">
+                    <option value="">-- Chọn giá trị --</option>
+                    <option value="Y" @if (sDetails.Where(x => x.SrvTypeDetailId == item.TypeDetailId).Select(x => x.SrvDetailValue).FirstOrDefault() == "Y") { <text> selected</text>}>Có</option>
+                    <option value="N" @if (sDetails.Where(x => x.SrvTypeDetailId == item.TypeDetailId).Select(x => x.SrvDetailValue).FirstOrDefault() == "N") { <text> selected</text>}>Không</option>
+                </select>
+            }
+            else
+            {
+                <input type="@if (item.TypeDetailType == "INT") {<text>number</text>} else {<text>text</text>}" class="form-control detailValue" value="@sDetails.Where(x => x.SrvTypeDetailId == item.TypeDetailId).Select(x => x.SrvDetailValue).FirstOrDefault()" />
+            }
+        </div>
+    </div>
+}

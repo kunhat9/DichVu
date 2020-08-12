@@ -1,0 +1,96 @@
+﻿@model List<CORE.Tables.TB_SERVICES>
+@{
+    int startPage = (ViewBag.pageNumber - 1) * ViewBag.pageSize + 1;
+    int? totalPage = (int?)ViewBag.maxNumber;
+}
+
+<style>
+    .table > thead > tr > td:first-child {
+        border-left: none;
+    }
+
+    .table > thead > tr > td {
+        border-left: 1px solid #ddd;
+    }
+
+    .table > tbody > tr > td:first-child {
+        border-left: none;
+    }
+
+    .table > tbody > tr > td {
+        border-left: 1px solid #ddd;
+    }
+</style>
+
+<div class="div-h100 @if (totalPage.HasValue && totalPage.Value > 1) { <text>div-bottom56</text> }">
+    <div class="div-h100-body">
+        <div class="well">
+            <table class="table">
+                <thead>
+                    <tr class="text-center" style="font-weight:bold">
+                        <td>STT</td>
+                        <td>Tên dịch vụ</td>
+                        <td>Giá tiền</td>
+                        <td>Đơn vị</td>
+                        <td>Cơ sở</td>
+                        <td>Giới thiệu</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <td class="text-center">@(startPage + i)</td>
+                            <td>@Model[i].ServiceName</td>
+                            <td>@Model[i].ServicePrice</td>
+                            <td>@Model[i].ServiceUnit</td>
+                            <td>@Model[i].ServiceBase</td>
+                            <td>@Model[i].ServiceContent</td>
+                            <td class="text-center">
+                                <ul class="icons-list" style="display:flex">
+                                    <li class="btnEdit" data-id="@Model[i].ServiceId">
+                                        <button type="button" class="btn btn-default btn-sm text-primary-600" data-toggle="modal"><i class="icon-pencil7"></i></button>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="">
+    @{ Html.RenderAction("_Pagination", "Home", new { maxNumber = ViewBag.maxNumber, pageNumber = ViewBag.pageNumber });}
+</div>
+
+<script>
+    let url_get = "/Services/_List";
+    let getParamsForSearch = (pageNumber, isNext) => {
+        return {
+            "keyText": $(".txtSearch").val(),
+            "pageNumber": pageNumber + isNext,
+            "pageSize": $(".select2-selection--single").val(),
+        };
+    }
+    function getDate(d) {
+        var arr = d.split('/');
+        if (arr.length != 3)
+            return '';
+        return arr[2] + arr[1] + arr[0];
+    }
+    var features = new Features(url_get, null, getParamsForSearch);
+
+    $(".btnEdit").click(function () {
+        var id = $(this).data("id");
+        $.ajax({
+            url: "/Services/_ListDetail",
+            type: "post",
+            data: { "serviceId": id },
+        }).done(function (result) {
+            $('#modal_default').html(result);
+            $('#modal_default').modal('show');
+            $('#modal_default').attr("data-action", "update");
+        });
+    });
+</script>

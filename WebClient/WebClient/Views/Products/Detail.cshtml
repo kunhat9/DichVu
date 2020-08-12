@@ -1,0 +1,248 @@
+﻿@using CORE.Tables
+@using WebClient.Configuration
+
+@model TB_PRODUCTS
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+    List<TB_FILES> files = (List<TB_FILES>)ViewBag.Files;
+}
+
+@if (Model == null)
+{
+    <div class="col-md-12">Mã sản phẩm không hợp lệ</div>
+}
+else
+{
+    <div class="col-md-9">
+        <div class="breadcrumb clearfix">
+            <ul>
+                <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="home">
+                    <a title="Đến trang chủ" href="/" itemprop="url"><span itemprop="title">Trang chủ</span></a>
+                </li>
+                <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="category17 icon-li">
+                    <div class="link-site-more">
+                        <a title="" href="/Products" itemprop="url">
+                            <span itemprop="title">Sản phẩm</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="productname icon-li"><strong>@Model.ProductName</strong> </li>
+            </ul>
+        </div>
+        <div class="product-detail clearfix relative">
+            <div class="product-block clearfix">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 product-image clearfix">
+                        <div class="sp-loading" style="display: none;">
+                            <img src="/Images/sp-loading.gif" alt=""><br>LOADING IMAGES
+                        </div>
+                        <div class="sp-wrap sp-non-touch" style="display: inline-block;">
+                            <div class="sp-large">
+                                <a href="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==Model.ProductCode).Select(x=>x.FilePath).FirstOrDefault())" class="ng-scope .sp-current-big">
+                                    <img src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==Model.ProductCode).Select(x=>x.FilePath).FirstOrDefault())">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 clearfix">
+                        <h1>@Model.ProductName</h1>
+                        <div class="price">
+                            <div><span class="price-new ng-binding">@string.Format("{0:N0}", Model.ProductPrice)&nbsp;₫</span></div>
+                            <span class="product-code ng-binding">Mã SP: @Model.ProductCode</span>
+                        </div>
+                        <div class="quantity clearfix">
+                            <label>Số lượng</label>
+                            <div class="quantity-input">
+                                <input type="number" value="1" class="text" id="quantity">
+                            </div>
+                        </div>
+                            <div class="button">
+                            <a href="javascript:addToCard('@Model.ProductCode')" class="btn btn-default">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>Thêm giỏ hàng
+                            </a>
+                            <a href="javascript:addToCardBuy('@Model.ProductCode')" class="btn btn-primary">
+                                <i class="glyphicon glyphicon-ok"></i>Mua ngay
+                            </a>
+                        </div>
+                        <div class="call">
+                            <p class="title">Để lại số điện thoại, chúng tôi sẽ tư vấn ngay sau từ 5 › 10 phút</p>
+                            <div class="input">
+                                <div class="input-group">
+                                    <input class="form-control ng-pristine ng-untouched ng-valid" ng-model="CustomerPhone" onblur="if(this.value=='')this.value='Nhập số điện thoại...'" onfocus="if(this.value=='Nhập số điện thoại...')this.value=''" value="Nhập số điện thoại..." type="text">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button" ng-click="callMe()"><i class="fa fa-phone"></i> Gọi lại cho tôi</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End-->
+            <div class="modal fade" id="modalMyCart" tabindex="-1" role="dialog" aria-labelledby="modalMyCartLabel" aria-hidden="true">
+                <div class="modal-dialog  modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-title ng-binding" id="modalMyCartLabel">Bạn có  sản phẩm trong giỏ hàng.</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table" style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Số lượng</th>
+                                        <th>Giá tiền</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- ngRepeat: item in OrderDetails -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="total-price-modal">
+                                        Tổng cộng : <span class="item-total ng-binding">₫</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margin-top-10">
+                                <div class="col-lg-6">
+                                    <div class="comeback text-left">
+                                        <a href="/san-pham.html">
+                                            <i class="fa fa-chevron-circle-left "></i> Tiếp tục mua hàng
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 text-right">
+                                    <div class="buttons btn-modal-cart">
+                                        <a class="btn btn-default" href="/thanh-toan.html">
+                                            Đặt hàng
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modalCallMe" tabindex="-1" role="dialog" aria-labelledby="modalCallMeLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h2>Cám ơn Qúy Khách đã liên hệ đặt hàng</h2>
+                            <p>Shop sẽ gọi lại để tư vấn cho Quý khách hàng trong thời gian sớm nhất</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            //$(window).scroll(function () {
+            //    var scrollTop = $(window).scrollTop();
+            //    var topTab = $(".product-tabs").offset().top;
+            //    var topProduct = $(".product-detail").offset().top;
+            //    var heightProduct = $(".product-detail").height();
+
+            //    if (scrollTop + 20 <= topTab || scrollTop >= topProduct + heightProduct) {
+            //        $(".product-tabs .name").removeClass("active-fix");
+            //        return false;
+            //    } else {
+            //        $(".navigation-menu").removeClass("navbar-fixed-top");
+            //        $(".product-tabs .name").addClass("active-fix");
+            //        return false;
+            //    }
+            //});
+        </script>
+    </div>
+    <div class="col-md-3">
+        <div class="box-sale-policy">
+            <h3><span>Chính sách bán hàng</span></h3>
+            <div class="sale-policy-block">
+                <ul>
+                    <li>Giao hàng TOÀN QUỐC</li>
+                    <li>Thanh toán khi nhận hàng</li>
+                    <li>Đổi trả trong <span>15 ngày</span></li>
+                    <li>Hoàn ngay tiền mặt</li>
+                    <li>Chất lượng đảm bảo</li>
+                    <li>Miễn phí vận chuyển:<span>Đơn hàng từ 3 món trở lên</span></li>
+                </ul>
+            </div>
+            <div class="buy-guide">
+                <h3>Hướng Dẫn Mua Hàng</h3>
+                <ul>
+                    <li>
+                        Mua hàng trực tiếp tại website
+                        <b class="ng-binding"> http://www.runtime.vn</b>
+                    </li>
+                    <li>
+                        Gọi điện thoại <strong class="ng-binding">
+                            0908 77 00 95
+                        </strong> để mua hàng
+                    </li>
+                    <li>
+                        Mua tại Trung tâm CSKH:<br>
+                        <strong class="ng-binding">5/12A Quang Trung, P.14, Q.Gò Vấp, Tp.HCM</strong>
+                        @*<a href="/ban-do.html" rel="nofollow" target="_blank">Xem Bản Đồ</a>*@
+                    </li>
+                    <li>
+                        Mua sỉ/buôn xin gọi <strong class="ng-binding">
+                            0908 77 00 95
+                        </strong> để được
+                        hỗ trợ.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    function addToCard(c) {
+        //var num = $(e.parentElement.parentElement).children('input').val();
+        var num = $('#quantity').val();
+
+        $.ajax({
+            url: "/Ajax/AddToCart",
+            type: "post",
+            data: { productCode: n, number: num },
+        }).done(function (result) {
+            if (result.Code == "0") {
+                toastr.success("Thêm thành công");
+                $('#cartNum').text('(' + result.Result + ')');
+            } else {
+                toastr.info(result.Result);
+            }
+        });
+    }
+    function addToCardBuy(c) {
+        //var num = $(e.parentElement.parentElement).children('input').val();
+        var num = $('#quantity').val();
+
+        $.ajax({
+            url: "/Ajax/AddToCart",
+            type: "post",
+            data: { productCode: c, number: num },
+        }).done(function (result) {
+            if (result.Code == "0") {
+                toastr.success("Thêm thành công");
+                location.href = "/Cart/Index";
+            } else {
+                toastr.info(result.Result);
+            }
+        });
+    }
+</script>

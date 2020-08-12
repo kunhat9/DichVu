@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{20519DA5-D5E6-4109-A301-014C5A52392A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CORE</RootNamespace>
+    <AssemblyName>CORE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettingKeys.cs" />
+    <Compile Include="Base\Attributes.cs" />
+    <Compile Include="Base\BusinessObject.cs" />
+    <Compile Include="Base\DataAccess.cs" />
+    <Compile Include="Base\DataAccessObject.cs" />
+    <Compile Include="Base\DataAccessTable.cs" />
+    <Compile Include="Helpers\ConvertDataWithView.cs" />
+    <Compile Include="Helpers\Dynamic.cs" />
+    <Compile Include="Helpers\Encrypt.cs" />
+    <Compile Include="Helpers\IOHelper.cs" />
+    <Compile Include="Helpers\ObjConvert.cs" />
+    <Compile Include="Helpers\SqlHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="Internal\TB_BLOGSSql.cs" />
+    <Compile Include="Internal\TB_CATEGORIESSql.cs" />
+    <Compile Include="Internal\TB_FILESSql.cs" />
+    <Compile Include="Internal\TB_MENUSSql.cs" />
+    <Compile Include="Internal\TB_MENU_GROUPSSql.cs" />
+    <Compile Include="Internal\TB_ORDERSSql.cs" />
+    <Compile Include="Internal\TB_PRODUCTSSql.cs" />
+    <Compile Include="Internal\TB_REGISTERSSql.cs" />
+    <Compile Include="Internal\TB_SERVICESSql.cs" />
+    <Compile Include="Internal\TB_SERVICE_DETAILSSql.cs" />
+    <Compile Include="Internal\TB_SLIDERSSql.cs" />
+    <Compile Include="Internal\TB_SUPPLIERSSql.cs" />
+    <Compile Include="Internal\TB_TYPESSql.cs" />
+    <Compile Include="Internal\TB_TYPE_DETAILSSql.cs" />
+    <Compile Include="Internal\TB_USERSSql.cs" />
+    <Compile Include="Internal\TB_VOUCHERSSql.cs" />
+    <Compile Include="Internal\View\V_Details_ServiceSql.cs" />
+    <Compile Include="Internal\View\V_Details_TypeSql.cs" />
+    <Compile Include="Internal\View\V_UserLoginInfo.cs" />
+    <Compile Include="InvalidBusinessObjectException.cs" />
+    <Compile Include="Models\SYS_User.cs" />
+    <Compile Include="Models\USER_LOGIN_INFOR.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TB_BLOGSFactory.cs" />
+    <Compile Include="Services\TB_CATEGORIESFactory.cs" />
+    <Compile Include="Services\TB_FILESFactory.cs" />
+    <Compile Include="Services\TB_MENUSFactory.cs" />
+    <Compile Include="Services\TB_ORDERSFactory.cs" />
+    <Compile Include="Services\TB_PRODUCTSFactory.cs" />
+    <Compile Include="Services\TB_REGISTERSFactory.cs" />
+    <Compile Include="Services\TB_SERVICESFactory.cs" />
+    <Compile Include="Services\TB_SERVICE_DETAILSFactory.cs" />
+    <Compile Include="Services\TB_SLIDERSFactory.cs" />
+    <Compile Include="Services\TB_SUPPLIERSFactory.cs" />
+    <Compile Include="Services\TB_TYPESFactory.cs" />
+    <Compile Include="Services\TB_TYPE_DETAILSFactory.cs" />
+    <Compile Include="Services\TB_USERSFactory.cs" />
+    <Compile Include="Services\TB_VOUCHERSFactory.cs" />
+    <Compile Include="Tables\SYS_ACTIONS.cs" />
+    <Compile Include="Tables\TB_BLOGS.cs" />
+    <Compile Include="Tables\TB_CATEGORIES.cs" />
+    <Compile Include="Tables\TB_FILES.cs" />
+    <Compile Include="Tables\TB_MENUS.cs" />
+    <Compile Include="Tables\TB_MENU_GROUPS.cs" />
+    <Compile Include="Tables\TB_ORDERS.cs" />
+    <Compile Include="Tables\TB_PRODUCTS.cs" />
+    <Compile Include="Tables\TB_REGISTERS.cs" />
+    <Compile Include="Tables\TB_SERVICES.cs" />
+    <Compile Include="Tables\TB_SERVICE_DETAILS.cs" />
+    <Compile Include="Tables\TB_SLIDERS.cs" />
+    <Compile Include="Tables\TB_SUPPLIERS.cs" />
+    <Compile Include="Tables\TB_TYPES.cs" />
+    <Compile Include="Tables\TB_TYPE_DETAILS.cs" />
+    <Compile Include="Tables\TB_USERS.cs" />
+    <Compile Include="Tables\TB_VOUCHERS.cs" />
+    <Compile Include="Views\ReportRevenue.cs" />
+    <Compile Include="Views\VIEW_INFO_USER_LOGIN.cs" />
+    <Compile Include="Views\V_Details_Service.cs" />
+    <Compile Include="Views\V_Details_Type.cs" />
+    <Compile Include="Views\V_Details_Menu.cs" />
+    <Compile Include="Views\V_Revenue.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

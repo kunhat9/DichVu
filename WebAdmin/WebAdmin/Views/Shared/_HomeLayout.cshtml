@@ -1,0 +1,98 @@
+﻿@using System.Text.RegularExpressions;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @if (ViewBag.Title == null || ViewBag.Title == "")
+    {
+        ViewBag.Title = "Service Web Admin";
+    }
+    <title>@ViewBag.Title</title>
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="~/Assets/js/toastr.min.css" rel="stylesheet" />
+    <link href="~/Assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="~/Assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="~/Assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="~/Assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="~/Assets/css/colors.css" rel="stylesheet" type="text/css">
+    <link href="~/Assets/css/custom.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script type="text/javascript" src="~/Assets/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="~/Assets/js/core/libraries/jquery_ui/core.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/core/libraries/jquery_ui/effects.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/visualization/c3/c3.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/pickadate/picker.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+    <script type="text/javascript" src="~/Assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/uploaders/fileinput.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/toastr.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/core/app.js"></script>
+    <script type="text/javascript" src="~/Assets/js/pages/form_select2.js"></script>
+    <script type="text/javascript" src="~/Assets/js/pages/uploader_bootstrap.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/trees/fancytree_all.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/plugins/trees/fancytree_childcounter.js"></script>
+    <script src="~/Assets/js/customize.js"></script>
+    <script src="~/Assets/js/Features.js"></script>
+    <!-- /theme JS files -->
+    @*@Styles.Render("~/Content/CssDefault")*@
+</head>
+<body class="navbar-top">
+    @{Html.RenderAction("_HomeHeader", "Home"); }
+    <div class="page-container">
+        <div class="page-content">
+            <div class="sidebar sidebar-main">
+                @{Html.RenderAction("_HomeMenuLeft", "Home"); }
+            </div>
+            <div class="content-wrapper">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @{Html.RenderAction("_HomeFooter", "Home"); }
+
+    @*@Scripts.Render("~/bundles/ScriptDefault") *@
+    @*<script type="text/javascript" src="~/Assets/js/pages/extra_trees.js"></script>*@
+    @{
+        var script = "";
+
+        if (IsSectionDefined("Scripts"))
+        {
+            script = RenderSection("Scripts", required: false).ToHtmlString();
+
+            Regex rRemScript = new Regex(@"<script[^>]*>");
+
+            script = rRemScript.Replace(script, "");
+
+            rRemScript = new Regex(@"<\/script>");
+
+            script = rRemScript.Replace(script, "");
+        }
+
+        <script type="text/javascript">
+            @if(!string.IsNullOrEmpty(script))
+             {
+                @MvcHtmlString.Create(script)
+             }
+        </script>
+    }
+    @RenderSection("ScriptsFunction", required: false)
+</body>
+</html>

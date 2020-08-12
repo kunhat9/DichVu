@@ -1,0 +1,72 @@
+﻿@using CORE.Tables
+@{
+    List<TB_MENUS> listMenu = ViewBag.Menus;
+    int height = ViewBag.Height ?? 404;
+}
+<style>
+    .m-menu {
+        border: 1px solid;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 10px;
+    }
+    .price-new {
+        color: #ff0000;
+        font-size: 20px;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+</style>
+
+@foreach (TB_MENUS menu in listMenu)
+{
+    <div class="col-md-6 m-menu">
+        <h1>@menu.MenuName</h1>
+        <div class="price">
+            <div>
+                <span class="price-new">@string.Format("{0:N0}", menu.MenuPrice)&nbsp;VND</span>
+            </div>
+        </div>
+        <p>Số người: @menu.MenuNum</p>
+        <a onclick="viewMenudetail(@menu.MenuId, '@menu.MenuName')"><strong><i>Chi tiết</i></strong></a>
+    </div>
+}
+<div id="modal_default" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Thực đơn</h5>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-flat">
+                    <div class="panel-body" style="height: @(height)px;max-height: @(height)px;overflow-y: auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function viewMenudetail(id, name) {
+        localStorage.setItem("menuId",id);
+        $.ajax({
+            url: "/Menus/_MenuDetail",
+            type: "post",
+            data: { "menuId": id },
+        }).done(function (result) {
+            //$('#modal_default').html(result);
+            //$('.modal-title').html(name);
+            //$('.panel-body').html(result);
+            //$('#modal_default').modal('show');
+
+            var html = '<h2 class="title">' + name + '</h2>';
+            html += '<div class="form-block">' + result + '</div>';
+            $('#MENU_DETAIL').html(html);
+        });
+    }
+</script>

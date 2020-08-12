@@ -1,0 +1,94 @@
+﻿@using CORE.Tables
+@using WebClient.Configuration
+
+@model List<TB_BLOGS>
+@{
+    ViewBag.Title = "Tin tức";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    string type = ViewBag.Type;
+    List<CORE.Tables.TB_FILES> files = (List<CORE.Tables.TB_FILES>)ViewBag.Images;
+}
+
+<div class="col-md-3">
+    <div class="menu-news">
+        <h3>
+            <span>
+                Tin tức
+            </span>
+        </h3>
+        <ul class="level0">
+            <li><a href="/News/Index?Type=KM"><i class="fa fa-arrow-circle-o-right"></i>Tin khuyến mãi</a></li>
+            <li><a class="active" href="/News/Index?Type=TT"><i class="fa fa-arrow-circle-o-right"></i>Tin thị trường</a></li>
+        </ul>
+    </div>
+</div>
+<div class="col-md-9">
+    <div class="breadcrumb clearfix">
+        <ul>
+            <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="home">
+                <a title="Đến trang chủ" href="/" itemprop="url"><span itemprop="title">Trang chủ</span></a>
+            </li>
+            @if (type != "KM" && type != "TT")
+            {
+                <li class="icon-li"><strong>Tin tức</strong> </li>
+            }
+            else
+            {
+                <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="icon-li">
+                    <a title="Tin tức" href="/News" itemprop="url"><span itemprop="title">Tin tức</span></a>
+                </li>
+                <li class="icon-li">
+                    <strong>
+                        @if (type == "KM")
+                        { <text>Tin khuyến mại</text> }
+                        else
+                        { <text>Tin thị trường</text> }
+                    </strong>
+                </li>
+            }
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $(".link-site-more").hover(function () { $(this).find(".s-c-n").show(); }, function () { $(this).find(".s-c-n").hide(); });
+    </script>
+    <div class="news-content">
+        <h1 class="title">
+            <span>
+                @if (type == "KM")
+                { <text>Tin khuyến mại</text> }
+                else if (type == "TT")
+                { <text>Tin thị trường</text> }
+                else
+                { <text>Tin tức</text> }
+            </span>
+        </h1>
+        <div class="news-block clearfix">
+            @if (Model == null || Model.Count == 0)
+            {
+                <div>Không có tin tức</div>
+            }
+            else
+            {
+                foreach (TB_BLOGS blog in Model)
+                {
+                    <div class="news-item clearfix">
+                        <div class="col-md-3 col-sm-4 col-xs-12 image">
+                            <a href="/News/Detail?Id=@blog.BlogId">
+                                <img src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==(""+blog.BlogId)).Select(x=>x.FilePath).FirstOrDefault())" class="img-responsive" alt="@blog.BlogName">
+                            </a>
+                        </div>
+                        <div class="col-md-9 col-sm-8 col-xs-12 news-info ">
+                            <h2 class="name">
+                                <a href="/News/Detail?Id=@blog.BlogId">@blog.BlogName.ToUpper()</a>
+                            </h2>
+                            <p class="date">@blog.BlogDateCreate.ToString("dd/MM/yyyy")</p>
+                            <div class="desc">
+                                @blog.BlogContent
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@using CORE.Tables
+
+@{
+    List<TB_TYPES> types = (List<TB_TYPES>)ViewBag.ServiceType;
+    int num = (int)ViewBag.CartNum;
+}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Quản lý dịch vụ</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Trang chủ</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/Services/Detail">Dịch vụ <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    @for (int i = 0; i < types.Count; i++)
+                    {
+                        <li><a class="has-ul" href=@("/Services/Detail?Id=" + types[i].TypeCode)>@types[i].TypeName</a></li>
+                    }
+                </ul>
+            </li>
+            <li><a href="/Products">Sản phẩm</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/Cart/Index"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng <span id="cartNum">(@num)</span></a></li>
+            <li><a href="/Registers/Index"><span class="glyphicon glyphicon-shopping-cart"></span> Đăng ký dịch vụ</a></li>
+        </ul>
+    </div>
+</nav>

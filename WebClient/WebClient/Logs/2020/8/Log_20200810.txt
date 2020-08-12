@@ -1,0 +1,47 @@
+00:03:54
+fe80::383d:7b5c:129:56ce%16
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebClient.Controllers.AjaxController.Register(Int32 reg_service, String reg_datebegin, String reg_number, String reg_name, String reg_email, String reg_phone, String reg_note, String menuId, List`1 listMenu, String voucher, String reg_table) in C:\Users\AnhTuanPC\Desktop\DichVu\WebClient\WebClient\Controllers\AjaxController.cs:line 75
+
+00:04:03
+fe80::383d:7b5c:129:56ce%16
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebClient.Controllers.AjaxController.Register(Int32 reg_service, String reg_datebegin, String reg_number, String reg_name, String reg_email, String reg_phone, String reg_note, String menuId, List`1 listMenu, String voucher, String reg_table) in C:\Users\AnhTuanPC\Desktop\DichVu\WebClient\WebClient\Controllers\AjaxController.cs:line 75
+
+00:33:20
+fe80::383d:7b5c:129:56ce%16
+UpdatePassword :
+SelectFromStore::'SP_REGISTER'.
+Invalid object name 'FN_SplitStringToTable'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+System.Exception: SelectFromStore::'SP_REGISTER'.
+Invalid object name 'FN_SplitStringToTable'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1. ---> System.Data.SqlClient.SqlException: Invalid object name 'FN_SplitStringToTable'.
+Transaction count after EXECUTE indicates a mismatching number of BEGIN and COMMIT statements. Previous count = 0, current count = 1.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CORE.Helpers.SqlHelper.ExecuteDataset(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\AnhTuanPC\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 602
+   at CORE.Helpers.SqlHelper.ExecuteDataset(SqlConnection connection, String spName, Object[] parameterValues) in C:\Users\AnhTuanPC\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 645
+   at CORE.Base.DataAccessObject`1.SelectFromStore(String& ecode, String& edesc, String storeName, Object[] values) in C:\Users\AnhTuanPC\Desktop\DichVu\CORE\Base\DataAccessObject.cs:line 83
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessObject`1.SelectFromStore(String& ecode, String& edesc, String storeName, Object[] values) in C:\Users\AnhTuanPC\Desktop\DichVu\CORE\Base\DataAccessObject.cs:line 89
+   at CORE.Services.TB_REGISTERSFactory.RegisterService(Int32 reg_service, String reg_datebegin, String reg_number, String reg_name, String reg_email, String reg_phone, String reg_note, String reg_user, String menuId, String menu, String voucher, String reg_table) in C:\Users\AnhTuanPC\Desktop\DichVu\CORE\Services\TB_REGISTERSFactory.cs:line 38
+   at WebClient.Controllers.AjaxController.Register(Int32 reg_service, String reg_datebegin, String reg_number, String reg_name, String reg_email, String reg_phone, String reg_note, String menuId, List`1 listMenu, String voucher, String reg_table) in C:\Users\AnhTuanPC\Desktop\DichVu\WebClient\WebClient\Controllers\AjaxController.cs:line 77

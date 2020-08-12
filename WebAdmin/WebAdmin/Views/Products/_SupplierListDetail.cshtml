@@ -1,0 +1,59 @@
+﻿@model int
+@{
+    CORE.Tables.TB_SUPPLIERS sup = ViewBag.Supplier;
+    if (sup == null)
+    {
+        sup = new CORE.Tables.TB_SUPPLIERS();
+    }
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+            <!-- Voucher info -->
+            <div class="panel panel-flat">
+                <div class="panel-body" style="height: @(Model)px;max-height: @(Model)px;overflow-y: auto;">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Mã nhà cung cấp :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" id="SUPPLIER_CODE" value="@sup.SupplierCode" @if (!string.IsNullOrEmpty(sup.SupplierCode)) { <text> readonly</text>  }>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Tên nhà cung cấp :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" id="SUPPLIER_NAME" value="@sup.SupplierName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Trạng thái :</label>
+                            <div class="col-md-6">
+                                <select class="select-search form-control not-empty" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" tabindex="-1" aria-hidden="true" id="SUPPLIER_STATE">
+                                    <option value="">-- Chọn Trạng thái --</option>
+                                    <option value="A" @if (sup.SupplierState == "A") { <text> selected</text>}>Kích hoạt</option>
+                                    <option value="D" @if (sup.SupplierState == "D") { <text> selected</text>}>Không kích hoạt</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Nội dung :</label>
+                                <textarea rows="4" class="form-control" style="resize: vertical;" id="SUPPLIER_NOTE" placeholder="Nhập mô tả ngắn gọn">@sup.SupplierNote</textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /Voucher info -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+            <button type="button" onclick="UploadFile()" class="btn btn-primary btnSaveVoucher">Save changes</button>
+        </div>
+    </div>
+</div>

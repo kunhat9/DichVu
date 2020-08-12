@@ -1,0 +1,130 @@
+﻿@model int
+@{
+    CORE.Tables.TB_TYPES type = ViewBag.ServiceType;
+    if (type == null)
+    {
+        type = new CORE.Tables.TB_TYPES();
+    }
+    List<CORE.Tables.TB_TYPE_DETAILS> details = ViewBag.Details;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+            <!-- Voucher info -->
+            <div class="panel panel-flat">
+                <div class="panel-body" style="height: @(Model)px;max-height: @(Model)px;overflow-y: auto;">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Mã loại dịch vụ :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" id="TYPE_CODE" value="@type.TypeCode" @if (!string.IsNullOrEmpty(type.TypeCode)) { <text> readonly</text>  }>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Tên loại dịch vụ :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" id="TYPE_NAME" value="@type.TypeName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Trạng thái :</label>
+                            <div class="col-md-6">
+                                <select class="select-search form-control not-empty" tabindex="-1" aria-hidden="true" id="TYPE_STATUS">
+                                    <option value="">-- Chọn Trạng thái --</option>
+                                    <option value="A" @if (type.TypeStatus == "A") { <text> selected</text>}>Sử dụng</option>
+                                    <option value="D" @if (type.TypeStatus == "D") { <text> selected</text>}>Không sử dụng</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Kiểu dịch vụ :</label>
+                            <div class="col-md-6">
+                                <select class="select-search form-control not-empty" tabindex="-1" aria-hidden="true" id="TYPE_TYPE">
+                                    <option value="">-- Chọn Kiểu dịch vụ --</option>
+                                    <option value="VP" @if (type.TypeType == "VP") { <text> selected</text>}>Văn phòng trọn gói</option>
+                                    <option value="SK" @if (type.TypeType == "SK") { <text> selected</text>}>Tổ chức sự kiện</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Tính năng :</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="header form-group">
+                                    <label class="control-label col-md-6">Tên tính năng</label>
+                                    <label class="control-label col-md-4">Kiểu dữ liệu</label>
+                                    <div class="col-md-2">
+                                        <input type="button" maxlength="50" class="form-control not-empty" id="btnPlus" value="+" style="border-radius: 36px;width: 36px;" />
+                                    </div>
+                                </div>
+                                <div class="mcontent">
+                                    @foreach (CORE.Tables.TB_TYPE_DETAILS item in details)
+                                    {
+                                        <div class="form-group">
+                                            <input type="hidden" value="@item.TypeDetailId" class="detailId" />
+                                            <div class="col-md-6">
+                                                <input type="text" maxlength="50" class="form-control not-empty detailName" value="@item.TypeDetailName" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <select class="form-control" tabindex="-1" aria-hidden="true">
+                                                    <option value="">-- Loại giá trị --</option>
+                                                    <option value="STRING" @if (item.TypeDetailType == "STRING") { <text> selected</text>}>Text</option>
+                                                    <option value="BOOL" @if (item.TypeDetailType == "BOOL") { <text> selected</text>}>Có - Không</option>
+                                                    <option value="INT" @if (item.TypeDetailType == "INT") { <text> selected</text>}>Số</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="button" maxlength="50" class="form-control not-empty btnMinus" value="-" style="border-radius: 36px;width: 36px;" onclick="minusRow(this)" />
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /Voucher info -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+            <button type="button" onclick="UploadFile()" class="btn btn-primary btnSaveVoucher">Save changes</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#btnPlus').click(function () {
+        var child =
+'<div class="form-group">\
+    <input type="hidden" value="0" class="detailId" />\
+    <div class="col-md-6">\
+        <input type="text" maxlength="50" class="form-control not-empty detailName" value="" />\
+    </div>\
+    <div class="col-md-4">\
+        <select class="form-control" tabindex="-1" aria-hidden="true">\
+            <option value="">-- Loại giá trị --</option>\
+            <option value="STRING">Text</option>\
+            <option value="BOOL">Có - Không</option>\
+            <option value="INT">Số</option>\
+        </select>\
+    </div>\
+    <div class="col-md-2">\
+        <input type="button" maxlength="50" class="form-control not-empty btnMinus" value="-" style="border-radius: 36px;width: 36px;" onclick="minusRow(this)" />\
+    </div>\
+</div>';
+
+        //$('.mcontent').append(child);
+        $('.mcontent').prepend(child);
+    });
+
+    function minusRow(e) {
+        $(e).parents('.form-group')[0].remove();
+    }
+</script>

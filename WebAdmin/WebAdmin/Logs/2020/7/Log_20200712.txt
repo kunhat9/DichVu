@@ -1,0 +1,545 @@
+09:22:12
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:24:55
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:26:27
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:26:33
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:40:26
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:42:19
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:42:27
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:42:32
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:45:55
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:46:04
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:52:26
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:54:21
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:54:28
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:54:48
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:56:28
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:57:32
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:57:40
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+09:58:08
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:00:44
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:00:58
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:02:00
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:02:46
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:04:33
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:04:39
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:06:47
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+14:18:47
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+14:18:54
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+14:19:13
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+15:30:44
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+15:33:36
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+15:34:17
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+15:34:29
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+16:35:32
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+16:37:20
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+16:37:20
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+16:37:36
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+16:48:57
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+16:50:53
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+16:51:18
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+16:56:20
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+17:02:38
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+17:08:49
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+17:09:38
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+17:49:30
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+17:50:35
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+17:51:37
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:08:43
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:09:44
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:11:16
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:13:32
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:13:58
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:33:04
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:33:22
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:42:48
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:43:03
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:43:13
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+18:44:17
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:45:04
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:47:40
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.AjaxController.InsertSerivce(String service_name, Decimal service_price, String service_unit, String service_base, String service_content, String service_status, String service_type, List`1 details) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 417
+
+18:48:02
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.AjaxController.InsertSerivce(String service_name, Decimal service_price, String service_unit, String service_base, String service_content, String service_status, String service_type, List`1 details) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 417
+
+18:48:08
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.AjaxController.InsertSerivce(String service_name, Decimal service_price, String service_unit, String service_base, String service_content, String service_status, String service_type, List`1 details) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 417
+
+18:48:22
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:49:03
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.AjaxController.InsertSerivce(String service_name, Decimal service_price, String service_unit, String service_base, String service_content, String service_status, String service_type, List`1 details) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 417
+
+18:49:19
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:49:20
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:49:49
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.AjaxController.InsertSerivce(String service_name, Decimal service_price, String service_unit, String service_base, String service_content, String service_status, String service_type, List`1 details) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 417
+
+18:50:07
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:50:09
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:50:25
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:50:26
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:51:28
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:53:02
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:53:17
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:58:48
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+18:59:05
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+19:09:43
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+19:12:03
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+19:12:22
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56

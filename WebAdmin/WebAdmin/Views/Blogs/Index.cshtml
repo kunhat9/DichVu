@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Quản lý bài viết";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="page-header page-header-default">
+    <div class="page-header-content" style="background-color: #fcfcfc;">
+        <div class="page-title" style="padding: 20px 0;">
+            <h4>
+                <a href="javascript:void(0);" onclick="history.go(-1);"><i class="icon-arrow-left52 position-left"></i></a>
+                <span class="text-semibold">Bài viết</span> - Danh sách bài viết
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="div-h100 div-top69">
+    <div class="panel-body div-h100-body">
+        <div class="two-columns form-group">
+            <div class="left-full">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" id="" class="form-control txtSearch" placeholder="Nhập từ khóa">
+                    </div>
+                </div>
+            </div>
+            <div class="right-fixed">
+                <button type="button" id="" class="btn btn-primary btnSearch">Tìm kiếm</button>
+            </div>
+        </div>
+        <div class="div-h100 div-top56">
+            <div class="two-columns form-group">
+                <label><span>Hiển thị:</span> </label>
+                <select class="select2-selection--single select2-selection__rendered d-inline" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" tabindex="-1" aria-hidden="true">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <button class="btn btn-primary float-right btnAdd" type="button" data-toggle="modal">
+                    <i class="fa fa-plus"></i> Thêm mới
+                </button>
+            </div>
+            <div class="div-h100 div-top56">
+                <div class="data-table div-h100-body">
+                    @{ Html.RenderAction("_DanhSach"); }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal_default" class="modal fade">
+    @{ Html.RenderAction("_ChiTiet"); }
+</div>
+
+<script>
+    $(".btnAdd").click(function () {
+        //$('#BLOG_ID').val('');
+        //$('#BLOG_TYPE').val('').change();
+        //$("#BLOG_SHOW").prop("checked", true);
+        //$('#BLOG_NAME').val('');
+        //$('#BLOG_CONTENT').val('');
+        //$('#modal_default').modal('show');
+        //$('#modal_default').attr("data-action", "insert");
+        $.ajax({
+            url: "/Blogs/_ChiTiet",
+            type: "post",
+            data: { "blogId": 0 },
+        }).done(function (result) {
+            $('#modal_default').html(result);
+            $('#modal_default').modal('show');
+            $('#modal_default').attr("data-action", "insert");
+            $('.select-search').select2();
+            $("#BLOG_SHOW").prop("checked", true);
+        });
+    });
+
+    function getParams() {
+        //var params = {
+        //    blog_id: $('#BLOG_ID').val(),
+        //    blog_name: $('#BLOG_NAME').val(),
+        //    blog_content: $('#BLOG_CONTENT').val(),
+        //    blog_file: $('#BLOG_IMAGES').get(0).files
+        //};
+        //return params;
+        var fileUpload = $("#BLOG_IMAGES").get(0);
+        var files = fileUpload.files;
+        var fileData = new FormData();
+
+        for (var i = 0; i < files.length; i++) {
+            fileData.append(files[i].name, files[i]);
+        }
+        fileData.append('blog_id', $('#BLOG_ID').val());
+        fileData.append('blog_type', $('#BLOG_TYPE').val());
+        fileData.append('blog_show', $('#BLOG_SHOW').is(":checked"));
+        fileData.append('blog_name', $('#BLOG_NAME').val());
+        fileData.append('blog_content', $('#BLOG_CONTENT').val());
+
+        return fileData;
+    }
+
+    function UploadFile() {
+        var param = getParams();
+        var url = "";
+        if ($('#modal_default').attr("data-action") == 'update') {
+            url = "/Ajax/UpdateBlog";
+        } else {
+            url = "/Ajax/InsertBlog";
+        }
+        $.ajax({
+            url: url,
+            type: "post",
+            contentType: false, // Not to set any content header
+            processData: false, // Not to process data
+            data: param,
+        }).done(function (result) {
+            if (result.Code == "0") {
+                toastr.success(result.Result);
+                location.href = "/Blogs/Index";
+            } else {
+                toastr.info(result.Result);
+            }
+        });
+    }
+</script>

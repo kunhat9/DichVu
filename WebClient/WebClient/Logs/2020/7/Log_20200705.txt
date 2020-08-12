@@ -1,0 +1,47 @@
+17:58:41
+192.168.186.2
+UpdatePassword :
+SelectFromStore::'SP_OrderInsert'.
+The ROLLBACK TRANSACTION request has no corresponding BEGIN TRANSACTION.
+System.Exception: SelectFromStore::'SP_OrderInsert'.
+The ROLLBACK TRANSACTION request has no corresponding BEGIN TRANSACTION. ---> System.Data.SqlClient.SqlException: The ROLLBACK TRANSACTION request has no corresponding BEGIN TRANSACTION.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.NextResult()
+   at System.Data.ProviderBase.DataReaderContainer.NextResult()
+   at System.Data.Common.DataAdapter.FillNextResult(DataReaderContainer dataReader)
+   at System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   at System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CORE.Helpers.SqlHelper.ExecuteDataset(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 602
+   at CORE.Helpers.SqlHelper.ExecuteDataset(SqlConnection connection, String spName, Object[] parameterValues) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 645
+   at CORE.Base.DataAccessObject`1.SelectFromStore(String& ecode, String& edesc, String storeName, Object[] values) in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessObject.cs:line 83
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessObject`1.SelectFromStore(String& ecode, String& edesc, String storeName, Object[] values) in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessObject.cs:line 89
+   at CORE.Services.TB_ORDERSFactory.InsertOrder(String xmlOrder, String xmlDetail, String& edesc) in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_ORDERSFactory.cs:line 38
+   at WebClient.Controllers.AjaxController.CartPay(String regName, String regPhone, String regMail, String regAddress, String regNote, String regNameOther, String regPhoneOther, String regMailOther, String regAddressOther, String voucher, String option) in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\AjaxController.cs:line 228
+
+19:11:20
+192.168.186.2
+UpdatePassword :
+String was not recognized as a valid DateTime.
+System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at WebClient.Controllers.AjaxController.Register(Int32 reg_service, String reg_datebegin, Int32 reg_number, String reg_name, String reg_email, String reg_phone) in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\AjaxController.cs:line 71
+
+19:46:41
+192.168.186.2
+UpdatePassword :
+String was not recognized as a valid DateTime.
+System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at WebClient.Controllers.AjaxController.Register(Int32 reg_service, String reg_datebegin, Int32 reg_number, String reg_name, String reg_email, String reg_phone) in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\AjaxController.cs:line 71

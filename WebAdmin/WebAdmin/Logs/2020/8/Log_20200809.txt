@@ -1,0 +1,320 @@
+08:52:38
+2402:800:61ae:8220:ed6c:5f39:3a3b:89af
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+08:52:46
+2402:800:61ae:8220:ed6c:5f39:3a3b:89af
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+08:54:06
+2402:800:61ae:8220:ed6c:5f39:3a3b:89af
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+08:55:40
+2402:800:61ae:8220:ed6c:5f39:3a3b:89af
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+11:13:38
+2402:800:61ae:8220:ed6c:5f39:3a3b:89af
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+22:32:38
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\SlidersController.cs:line 53
+
+22:32:40
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\SlidersController.cs:line 53
+
+22:33:21
+fe80::383d:7b5c:129:56ce%16
+UpdatePassword :
+Insert::'TB_FILES'.
+String or binary data would be truncated.
+The statement has been terminated.
+System.Exception: Insert::'TB_FILES'.
+String or binary data would be truncated.
+The statement has been terminated. ---> System.Data.SqlClient.SqlException: String or binary data would be truncated.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CORE.Helpers.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Helpers\SqlHelper.cs:line 333
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 165
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 176
+   at CORE.Services.TB_FILESFactory.Insert(TB_FILES files) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Services\TB_FILESFactory.cs:line 16
+   at WebAdmin.Controllers.AjaxController.InsertSlider(String slider_name, String slider_content, Boolean slider_show) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 221
+
+22:33:30
+fe80::383d:7b5c:129:56ce%16
+UpdatePassword :
+Insert::'TB_FILES'.
+String or binary data would be truncated.
+The statement has been terminated.
+System.Exception: Insert::'TB_FILES'.
+String or binary data would be truncated.
+The statement has been terminated. ---> System.Data.SqlClient.SqlException: String or binary data would be truncated.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CORE.Helpers.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Helpers\SqlHelper.cs:line 333
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 165
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 176
+   at CORE.Services.TB_FILESFactory.Insert(TB_FILES files) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Services\TB_FILESFactory.cs:line 16
+   at WebAdmin.Controllers.AjaxController.InsertSlider(String slider_name, String slider_content, Boolean slider_show) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 221
+
+22:34:24
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\SlidersController.cs:line 53
+
+22:37:36
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId)
+
+22:38:32
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId)
+
+22:38:49
+fe80::383d:7b5c:129:56ce%16
+UpdatePassword :
+Insert::'TB_FILES'.
+String or binary data would be truncated.
+The statement has been terminated.
+System.Exception: Insert::'TB_FILES'.
+String or binary data would be truncated.
+The statement has been terminated. ---> System.Data.SqlClient.SqlException: String or binary data would be truncated.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CORE.Helpers.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Helpers\SqlHelper.cs:line 333
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 165
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 176
+   at CORE.Services.TB_FILESFactory.Insert(TB_FILES files) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Services\TB_FILESFactory.cs:line 16
+   at WebAdmin.Controllers.AjaxController.UpdateSlider(Int32 slider_id, String slider_name, String slider_content, Boolean slider_show)
+
+22:39:51
+fe80::383d:7b5c:129:56ce%16
+UpdatePassword :
+Insert::'TB_FILES'.
+String or binary data would be truncated.
+The statement has been terminated.
+System.Exception: Insert::'TB_FILES'.
+String or binary data would be truncated.
+The statement has been terminated. ---> System.Data.SqlClient.SqlException: String or binary data would be truncated.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CORE.Helpers.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Helpers\SqlHelper.cs:line 333
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 165
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Base\DataAccessTable.cs:line 176
+   at CORE.Services.TB_FILESFactory.Insert(TB_FILES files) in C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\Services\TB_FILESFactory.cs:line 16
+   at WebAdmin.Controllers.AjaxController.UpdateSlider(Int32 slider_id, String slider_name, String slider_content, Boolean slider_show)
+
+22:42:32
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId)
+
+22:42:53
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId)
+
+22:48:37
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\SlidersController.cs:line 53
+
+22:48:51
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\SlidersController.cs:line 53
+
+23:06:33
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:27:40
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:28:47
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:29:37
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:29:52
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:29:59
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:30:17
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:30:24
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:31:24
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:31:39
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:31:55
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:32:05
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:32:50
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:33:23
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:41:27
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:43:50
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:45:50
+fe80::383d:7b5c:129:56ce%16
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\AnhTuanPC\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57

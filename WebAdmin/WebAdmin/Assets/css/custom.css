@@ -1,0 +1,196 @@
+﻿.float-right{
+    float:right;
+}
+.d-inline{
+    display:inline!important;
+}
+.picker__holder {
+	width: 180%!important;
+}
+.w-100{
+    width:100%;
+}
+.d-none{
+    display:none;
+}
+.d-flex{
+    display:flex;
+}
+.justify-content-center{
+    justify-content:center;
+}
+.fixed-col {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 0px
+}
+input:read-only{
+    background-color:white!important;
+}
+.search-map{
+    width: 40%!important;
+    top: 7px!important;
+    left: 30%!important;
+}
+.two-columns{
+    display: table;
+    width: 100%;
+}
+.left-full{
+    display: table-cell;
+    width: 100%;
+    padding-right: 10px;
+}
+.right-fixed{
+    display: table-cell;
+    width: auto;
+}
+@media only screen and (max-width: 480px) {
+    .left-full {
+        padding-right: 0;
+        padding-bottom: 10px;
+    }
+    .right-fixed {
+        display: table-row;
+    }
+    .well{
+        overflow: auto;
+    }
+}
+@-moz-document url-prefix() {
+    .two-columns{
+        display: flex;
+    }
+}
+@media only screen and (min-width: 769px) {
+    html{
+        overflow: hidden;
+    }
+    body, .row, .col-md-6{
+        height: 100%;
+    }
+    .page-container{
+        display: block;
+        height: 100%;
+    }
+    .sidebar{
+        float: left;
+        min-width: 260px;
+    }
+    .sidebar-xs .sidebar{
+        min-width: unset;
+    }
+    .sidebar-content{
+        height: 100%;
+        overflow: auto;
+    }
+    .sidebar-xs .sidebar-content{
+        overflow: unset;
+    }
+    .sidebar-category{
+        margin-bottom: 50px;
+    }
+    .page-content{
+        display: flex;
+        height: 100%;
+    }
+    .footer{
+        position: fixed;
+        bottom: 15px;
+        padding: 0px 20px;
+    }
+    /* top: fixed, content: 100%
+        <div class="">height:69px</div>
+        <div class="div-h100 div-top69">
+            <div class="div-h100-body">height:100%</div>
+        </div>
+    */
+    .div-h100{
+        height: 100%;
+    }
+    .div-top56{
+        margin-top: -56px;
+        padding-top: 56px;
+    }
+    .div-top64{
+        margin-top: -64px;
+        padding-top: 64px;
+    }
+    .div-top69{
+        margin-top: -69px;
+        padding-top: 69px;
+    }
+    .div-top105{
+        margin-top: -105px;
+        padding-top: 105px;
+    }
+    .div-bottom56{
+        margin-bottom: -56px;
+        padding-bottom: 56px;
+    }
+    .div-h100-body{
+        height: 100%;
+        overflow: hidden;
+    }
+    .div-h100-auto{
+        height: 100%;
+        overflow: auto;
+    }
+    /* bottom: fixed, content: 100%
+        <div class="div-h100 div-bottom56">
+            <div class="div-h100-body">height:100%</div>
+        </div>
+        <div class="">height:56px</div>
+    */
+    .well{
+        height: 100%;
+        overflow: auto;
+    }
+    .fancytree-container{
+        overflow: unset;
+    }
+    .div-p-20-0{
+        padding: 20px 0;
+    }
+    .div-table-report{
+        height: 100%;
+        overflow: auto;
+        background-color: #fdfdfd;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .table-fixed{
+        width: 100%;
+        border-collapse: separate;
+    }
+    .table-fixed > tbody > tr > td{
+        vertical-align: middle;
+        padding: 8px 13px;
+        line-height: 1.5384616;
+        border-right: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        z-index: 0;
+    }
+    .table-fixed > tbody > tr > td > i{
+        position: unset;
+    }
+    .table-fixed > tbody > tr > td:last-child{
+        border-right: 0;
+    }
+    .table-fixed > tbody > tr:last-child > td{
+        border-bottom: 0;
+    }
+    .table-fixed > tbody > tr > td:first-child{
+        background-color: #F5F5F5;
+    }
+    .table-fixed > tbody > tr:first-child > td{
+        background-color: #F5F5F5;
+        font-weight: bold;
+    }
+    .table-fixed > tbody > tr:first-child > td:first-child{
+        position: relative;
+        z-index: 1;
+    }
+}

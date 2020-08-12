@@ -1,0 +1,330 @@
+﻿@using System.Text.RegularExpressions;
+@using WebClient.Models
+@using WebClient.AppSession
+
+@{
+//int cartNum = 0;
+//if (Session[AppSessionKeys.USER_CART] != null)
+//{
+//    cartNum = ((List<CartModel>)Session[AppSessionKeys.USER_CART]).Count;
+//}
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @if (ViewBag.Title == null || ViewBag.Title == "")
+    {
+        ViewBag.Title = "Service Web Client";
+    }
+    <title>@ViewBag.Title</title>
+    <link href="/Scripts/js/toastr.min.css" rel="stylesheet" />
+    <link href="/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Scripts/Themes/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Scripts/Themes/common.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/Themes/animate.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/jQuery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    @*<link href="/Content/components.css" rel="stylesheet" />*@
+    <link href="/Scripts/RUN041/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/RUN041/responsive.css" rel="stylesheet" type="text/css" />
+
+    <link href="/Scripts/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="/Scripts/owl-carousel/owl.theme.css" rel="stylesheet" />
+
+    <link href="/Scripts/smoothproducts/smoothproducts.css" rel="stylesheet" />
+
+    <script src="/Scripts/jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jQuery/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Scripts/jQuery-ui/jquery-ui.min.js" type="text/javascript"></script>
+
+    @*<script type="text/javascript" src="/Scripts/js/select2.js"></script>*@
+    <script type="text/javascript" src="/Scripts/js/toastr.min.js"></script>
+
+    <script src="/Scripts/common/fix-height.js" data-img-box=".image-resize" type="text/javascript"></script>
+    <script src="/Scripts/common/common.js" type="text/javascript"></script>
+    <script src="/Scripts/common/jquery.cookie.js" type="text/javascript"></script>
+    <script src="/Scripts/common/mycard.js" type="text/javascript"></script>
+    <script src="/Scripts/lazyLoad/jquery.lazyload.min.js" type="text/javascript"></script>
+    <script src="/Scripts/owl-carousel/owl.carousel.min.js"></script>
+
+    <script src="/Scripts/common/login.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <section class="top-link clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav navbar-nav topmenu-contact pull-left">
+                                <li><i class="fa fa-phone"></i> <span>Hotline:0964 950 856</span></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right topmenu  hidden-xs hidden-sm">
+                                <li class="order-check"><a data-active="" href="/kiem-tra-don-hang.html"><i class="fa fa-pencil-square-o"></i> Kiểm tra đơn hàng</a></li>
+                                @*<li class="order-cart"><a data-active="/Cart" href="/Cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng <span id="cartNum">(@cartNum)</span></a></li>*@
+                                <li class="order-cart"><a data-active="/Registers" href="/Registers"><i class="fa fa-shopping-cart"></i> Dịch vụ</a></li>
+                                @*<li class="account-login"><a data-active="" href="/dang-nhap.html"><i class="fa fa-sign-in"></i> Đăng nhập </a></li>*@
+                                @*<li class="account-register"><a data-active="" href="/dang-ky.html"><i class="fa fa-key"></i> Đăng ký </a></li>*@
+                            </ul>
+                            @*<div class="show-mobile hidden-lg hidden-md">
+                                    <div class="quick-user">
+                                        <div class="quickaccess-toggle">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="inner-toggle">
+                                            <ul class="login links">
+                                                <li><a href="/dang-ky.html"><i class="fa fa-sign-in"></i> Đăng ký</a></li>
+                                                <li><a href="/dang-nhap.html"><i class="fa fa-key"></i> Đăng nhập</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="quick-access">
+                                        <div class="quickaccess-toggle">
+                                            <i class="fa fa-list"></i>
+                                        </div>
+                                        <div class="inner-toggle">
+                                            <ul class="links">
+                                                <li><a id="mobile-wishlist-total" href="/kiem-tra-don-hang.html" class="wishlist"><i class="fa fa-pencil-square-o"></i> Kiểm tra đơn hàng</a></li>
+                                                <li><a href="/gio-hang.html" class="shoppingcart"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="navigation-menu clearfix">
+                <div class="container">
+                    @{Html.RenderAction("_HomeHeader", "Home"); }
+                </div>
+            </section>
+            @{Html.RenderAction("_HomeCategory", "Home"); }
+        </div>
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-box col-md-3 col-sm-12 col-xs-12"></div>
+                        <div class="footer-box col-md-3 col-sm-12 col-xs-12">
+                            <div class="item"><h3><span>Giới thiệu</span></h3></div>
+                            @*<ul>
+                                <li><a href="/Contact">Về chúng tôi</a></li>
+                            </ul>*@
+                            <div class="box-address-content">
+                                <b>TRUNG TÂM VĂN HÓA THÔNG TIN VÀ THỂ THAO HUYỆN LỤC NAM</b>
+                                <p>© 2020. Giấy chứng nhận ĐKKD số : 0107531934 do Sở KH&ĐT Bắc Giang cấp ngày 08/08/2020.</p>
+                                <p>
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="mailto:info@runtime.vn">trungtamvhttlucnam@gov.com</a>
+                                </p>
+                                <p>
+                                    <i class="fa fa-home"></i>
+                                    - Cơ sở 1: QUẢNG TRƯỜNG 3/2, PHỐ BÌNH MINH ( Trụ sở trung tâm )                              
+                                </p>
+                                <p>
+                                    <i class="fa fa-home"></i>
+                                    - Cơ sở 2: Số 303 tòa nhà MilPec Bình Minh (Đến bưu điện đi vào 15m nhìn bên trái )
+                                </p>
+                                <p>
+                                    <i class="fa fa-home"></i>
+                                    - Cơ sở 3: Số 415 Phố Bình Minh ( Tòa nhà Thu Giang)
+                                </p>
+                                <p>
+                                    <i class="fa fa-phone"></i>
+                                    Phone: 0964 950 856
+                                </p>
+                                <div class="soc-ico"><p class="assistive-text">Find us on:</p>
+                                <a title="Facebook" href="https://www.facebook.com/BishubCoworkingSpace/" target="_blank" class="facebook">
+                                    <span class="soc-font-icon"></span>
+                                    <span class="screen-reader-text">Facebook</span>
+                                    </a>
+                                <a title="Twitter" href="#" target="_blank" class="twitter"><span class="soc-font-icon"></span>
+                                    <span class="screen-reader-text">Twitter</span></a>
+                                <a title="Google+" href="#" target="_blank" class="google"><span class="soc-font-icon"></span>
+                                    <span class="screen-reader-text">Google+</span></a>
+                                <a title="YouTube" href="#" target="_blank" class="you-tube"><span class="soc-font-icon"></span>
+                                    <span class="screen-reader-text">YouTube</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-box box-address col-md-3 col-sm-12 col-xs-12">
+                            <div class="item">
+                                <h3>
+                                    Địa chỉ google trung tâm
+                                </h3>
+                                <div class="box-address-content">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-box box-address col-md-3 col-sm-12 col-xs-12">
+                            <div class="item">
+                                <h3>
+                                    Kết nối với trung tâm
+                                </h3>
+                                <div class="box-address-content">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*@Scripts.Render("~/bundles/ScriptDefault") *@
+    @*<script type="text/javascript" src="~/Assets/js/pages/extra_trees.js"></script>*@
+    @{
+        var script = "";
+
+        if (IsSectionDefined("Scripts"))
+        {
+            script = RenderSection("Scripts", required: false).ToHtmlString();
+
+            Regex rRemScript = new Regex(@"<script[^>]*>");
+
+            script = rRemScript.Replace(script, "");
+
+            rRemScript = new Regex(@"<\/script>");
+
+            script = rRemScript.Replace(script, "");
+        }
+
+        <script type="text/javascript">
+            @if(!string.IsNullOrEmpty(script))
+             {
+                @MvcHtmlString.Create(script)
+             }
+        </script>
+    }
+    @RenderSection("ScriptsFunction", required: false)
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //var str = location.href.toLowerCase();
+        var str = location.pathname.toLowerCase();
+        $("ul.menu li").removeClass("active");
+        $("ul.menu li a").each(function () {
+            if ($(this).data("active") && str.length <= $(this).data("active").length && str.indexOf($(this).data("active").toLowerCase()) >= 0) {
+                $(this).parent().addClass("active");
+            }
+        });
+        $("ul.topmenu li").css("font-weight", "normal");
+        $("ul.topmenu li a").each(function () {
+            if ($(this).data("active") && str.indexOf($(this).data("active").toLowerCase()) >= 0) {
+                $(this).parent().css("font-weight", "bold");
+            }
+        });
+
+        jQuery("#menu-icon").on("click", function () {
+            jQuery(".sf-menu-phone").slideToggle();
+            jQuery(this).toggleClass("active");
+        });
+
+        jQuery('.sf-menu-phone').find('li.parent').append('<i class="fa fa-angle-down"></i>');
+        jQuery('.sf-menu-phone li.parent i').on("click", function () {
+            if (jQuery(this).hasClass('fa-angle-up')) {
+                jQuery(this).removeClass('fa-angle-up').parent('li.parent').find('> ul').slideToggle();
+            } else {
+                jQuery(this).addClass('fa-angle-up').parent('li.parent').find('> ul').slideToggle();
+            }
+        });
+
+        $('ul.tree.dhtml').hide();
+
+        //to do not execute this script as much as it's called...
+        if (!$('ul.tree.dhtml').hasClass('dynamized')) {
+            //add growers to each ul.tree elements
+            $('ul.tree.dhtml ul').prev().before("<span class='grower OPEN'> </span>");
+
+            //dynamically add the '.last' class on each last item of a branch
+            $('ul.tree.dhtml ul li:last-child, ul.tree.dhtml li:last-child').addClass('last');
+
+            //collapse every expanded branch
+            $('ul.tree.dhtml span.grower.OPEN').addClass('CLOSE').removeClass('OPEN').parent().find('ul:first').hide();
+            $('ul.tree.dhtml').show();
+
+            //open the tree for the selected branch
+            $('ul.tree.dhtml .selected').parents().each(function () {
+                if ($(this).is('ul'))
+                    toggleBranch($(this).prev().prev(), true);
+            });
+            toggleBranch($('ul.tree.dhtml .selected').prev(), true);
+
+            //add a fonction on clicks on growers
+            $('ul.tree.dhtml span.grower').click(function () {
+                toggleBranch($(this));
+            });
+            //mark this 'ul.tree' elements as already 'dynamized'
+            $('ul.tree.dhtml').addClass('dynamized');
+
+            $('ul.tree.dhtml').removeClass('dhtml');
+        }
+    });
+    $("#btnsearch").click(function () {
+        SearchProduct();
+    });
+    $("#txtsearch").keydown(function (event) {
+        if (event.keyCode == 13) {
+            SearchProduct();
+        }
+    });
+    function SearchProduct() {
+        var key = $('#txtsearch').val();
+        if (key == '' || key == 'Tìm kiếm...') {
+            $('#txtsearch').focus();
+            return;
+        }
+        var group = $('#lbgroup').val();
+        window.location = '/Products/Search?group=' + group + '&key=' + key;
+    }
+    $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop != 0) {
+            $(".navigation-menu").addClass("navbar-fixed-top");
+            return false;
+        } else {
+            $(".navigation-menu").removeClass("navbar-fixed-top");
+            return false;
+        }
+    });
+
+    //animate the opening of the branch (span.grower jQueryElement)
+    function openBranch(jQueryElement, noAnimation) {
+        jQueryElement.addClass('OPEN').removeClass('CLOSE');
+        if (noAnimation)
+            jQueryElement.parent().find('ul:first').show();
+        else
+            jQueryElement.parent().find('ul:first').slideDown();
+    }
+    //animate the closing of the branch (span.grower jQueryElement)
+    function closeBranch(jQueryElement, noAnimation) {
+        jQueryElement.addClass('CLOSE').removeClass('OPEN');
+        if (noAnimation)
+            jQueryElement.parent().find('ul:first').hide();
+        else
+            jQueryElement.parent().find('ul:first').slideUp();
+    }
+
+    //animate the closing or opening of the branch (ul jQueryElement)
+    function toggleBranch(jQueryElement, noAnimation) {
+        if (jQueryElement.hasClass('OPEN'))
+            closeBranch(jQueryElement, noAnimation);
+        else
+            openBranch(jQueryElement, noAnimation);
+    }
+</script>

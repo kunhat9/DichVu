@@ -1,0 +1,176 @@
+﻿@using CORE.Tables
+@using WebClient.Configuration
+
+@model TB_SERVICES
+@{
+    ViewBag.Title = "Chi tiết Dịch vụ";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    int height = ViewBag.Height ?? 408;
+
+    List<TB_FILES> files = (List<TB_FILES>)ViewBag.Files;
+    List<TB_TYPE_DETAILS> types = ViewBag.Types;
+    List<TB_SERVICE_DETAILS> details = ViewBag.Details;
+    List<TB_TYPES> listType = ViewBag.ListType;
+    List<TB_MENUS> listMenu = ViewBag.Menus;
+}
+<style>
+    tr {
+        word-spacing: normal;
+        color: #444;
+        font: normal 15px/27px "Roboto",Helvetica,Arial,Verdana,sans-serif;
+    }
+    td {
+        border: 1px solid #ededed !important;
+        padding: 5px 10px 5px 5px;
+    }
+</style>
+
+@if (Model == null)
+{
+    <div class="col-md-12">Mã sản phẩm không hợp lệ</div>
+}
+else
+{
+    <div class="col-md-9">
+        <div class="breadcrumb clearfix">
+            <ul>
+                <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="home">
+                    <a title="Đến trang chủ" href="/" itemprop="url"><span itemprop="title">Trang chủ</span></a>
+                </li>
+                <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="category17 icon-li">
+                    <div class="link-site-more">
+                        <a title="" href="/Services" itemprop="url">
+                            <span itemprop="title">Dịch vụ</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="productname icon-li"><strong>@Model.ServiceName</strong> </li>
+            </ul>
+        </div>
+        <div class="product-detail clearfix relative">
+            <div class="product-block clearfix">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 product-image clearfix">
+                        <div class="sp-loading" style="display: none;">
+                            <img src="/Images/sp-loading.gif" alt=""><br>LOADING IMAGES
+                        </div>
+                        <div class="sp-wrap sp-non-touch" style="display: inline-block;">
+                            <div class="sp-large">
+                                <a href="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==""+Model.ServiceId).Select(x=>x.FilePath).FirstOrDefault())" class="ng-scope .sp-current-big">
+                                    <img src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==""+Model.ServiceId).Select(x=>x.FilePath).FirstOrDefault())">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 clearfix">
+                        <h1>@Model.ServiceName</h1>
+                        <div class="price">
+                            <div><span class="price-new ng-binding">@string.Format("{0:N0}", Model.ServicePrice)&nbsp;@Model.ServiceUnit</span></div>
+                            <span class="product-code ng-binding">Mã DV: @Model.ServiceId</span>
+                        </div>
+                        <div class="quantity clearfix">
+                            <label>Cơ sở</label><p>@Model.ServiceBase</p>
+                        </div>
+                        <div class="button">
+                            <a href="/Registers?Id=@Model.ServiceId" class="btn btn-primary">
+                                <i class="glyphicon glyphicon-ok"></i>Đăng ký ngay
+                            </a>
+                        </div>
+                        @*<div class="call">
+                            <p class="title">Để lại số điện thoại, chúng tôi sẽ tư vấn ngay sau từ 5 › 10 phút</p>
+                            <div class="input">
+                                <div class="input-group">
+                                    <input class="form-control ng-pristine ng-untouched ng-valid" ng-model="CustomerPhone" onblur="if(this.value=='')this.value='Nhập số điện thoại...'" onfocus="if(this.value=='Nhập số điện thoại...')this.value=''" value="Nhập số điện thoại..." type="text">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button" ng-click="callMe()"><i class="fa fa-phone"></i> Gọi lại cho tôi</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                    <div class="col-md-12">
+                        <p class="p-content">@Model.ServiceContent</p>
+                    </div>
+                    <div class="col-md-12 call">
+                        @if (listType.Where(x => x.TypeCode.Equals(Model.ServiceTypeCode)).ToList().Count > 0)
+                        {
+                            <p class="title"> <h1>PHÒNG HỌP HỘI THẢO</h1> </p>
+                            Html.RenderAction("_MenuGroup", "Menus", new { serviceId = Model.ServiceId });
+                        }
+                    </div>
+                    <div class="col-md-12">
+                        <table>
+                            <tr style="background: #ff6300; color: white;">
+                                <td>@Model.ServiceName</td>
+                                <td>Tính năng</td>
+                            </tr>
+                            @foreach (TB_TYPE_DETAILS t in types)
+                            {
+                                <tr>
+                                    <td><strong>@t.TypeDetailName</strong></td>
+                                    <td style="text-align: center;">
+                                        <span style="font-weight: 400;">
+                                            @{ string s = details.Where(x => x.SrvTypeDetailId == t.TypeDetailId).Select(x => x.SrvDetailValue).FirstOrDefault();
+                                                if (t.TypeDetailType == "BOOL")
+                                                {
+                                                    if (s == "Y")
+                                                    { <text>Có</text>}
+                                                    else if (s == "N")
+                                                    {<text>Không</text> }
+                                                    else
+                                                    {<text>@s</text>}
+                                                }
+                                                else
+                                                { <text>@s</text>}
+                                            }
+                                        </span>
+                                    </td>
+                                </tr>
+                             }
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--End-->
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="box-sale-policy">
+            <h3><span>Chính sách bán hàng</span></h3>
+            <div class="sale-policy-block">
+                <ul>
+                    <li>Giao hàng toàn Huyện</li>
+                    <li>Thanh toán khi nhận hàng</li>
+                    <li>Hoàn ngay tiền mặt</li>
+                    <li>Chất lượng đảm bảo</li>
+                    <li>Miễn phí vận chuyển:<span>Đơn hàng từ 3 món trở lên</span></li>
+                </ul>
+            </div>
+            <div class="buy-guide">
+                <h3>Hướng Dẫn Mua Hàng</h3>
+                <ul>
+                    <li>
+                        Mua hàng trực tiếp tại website
+                        <b class="ng-binding"> http://www.trungtamhuyenlucnam.vn</b>
+                    </li>
+                    <li>
+                        Gọi điện thoại <strong class="ng-binding">
+                            0964 950 856
+                        </strong> để mua hàng
+                    </li>
+                    <li>
+                        Mua tại Trung tâm CSKH:<br>
+                        <strong class="ng-binding">QUẢNG TRƯỜNG 3/2, PHỐ BÌNH MINH, HUYỆN LỤC NAM, TỈNH BẮC GIANG.</strong>
+                        @*<a href="/ban-do.html" rel="nofollow" target="_blank">Xem Bản Đồ</a>*@
+                    </li>
+                    <li>
+                        Hỗ trợ khách hàng, hotline: <strong class="ng-binding">
+                            0964 950 856
+                        </strong> để được
+                        hỗ trợ.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}

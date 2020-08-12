@@ -1,0 +1,55 @@
+20:53:31
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+20:56:23
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+22:58:53
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.AjaxController.UpdateMenu(Int32 menu_id, Int32 menu_service_id, String menu_name, Int32 menu_num, Decimal menu_price, String menu_status, String menu_note, List`1 details) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 634
+
+22:59:14
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.AjaxController.UpdateMenu(Int32 menu_id, Int32 menu_service_id, String menu_name, Int32 menu_num, Decimal menu_price, String menu_status, String menu_note, List`1 details) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 634
+
+22:59:59
+192.168.186.2
+UpdatePassword :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.AjaxController.UpdateMenu(Int32 menu_id, Int32 menu_service_id, String menu_name, Int32 menu_num, Decimal menu_price, String menu_status, String menu_note, List`1 details) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 634
+
+23:09:45
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:09:55
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57
+
+23:10:10
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 57

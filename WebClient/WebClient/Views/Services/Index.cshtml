@@ -1,0 +1,102 @@
+﻿@using CORE.Tables
+@using WebClient.Configuration
+
+@model List<TB_SERVICES>
+@{
+    ViewBag.Title = "Dịch vụ";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+    List<TB_FILES> files = (List<TB_FILES>)ViewBag.Files;
+}
+
+<div class="col-md-12">
+    <div class="breadcrumb clearfix">
+        <ul>
+            <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="home">
+                <a title="Đến trang chủ" href="/" itemprop="url"><span itemprop="title">Trang chủ</span></a>
+            </li>
+            <li class="icon-li"><strong>Dịch vụ</strong> </li>
+        </ul>
+    </div>
+    <section class="product-content clearfix">
+        <h1 class="title clearfix"><span>Dịch vụ</span></h1>
+        @*<nav class="navbar navbar-default product-filter">
+                <ul class="display">
+                    <li id="grid" class="active grid"><a href="#" title="Grid"><i class="fa fa-th-large"></i></a></li>
+                    <li id="list" class="list"><a href="#" title="List"><i class="fa fa-th-list"></i></a></li>
+                </ul>
+                <div class="limit">
+                    <span>Sản phẩm/trang</span>
+                    <select id="lblimit" name="lblimit" class="nb_item" onchange="window.location.href = this.options[this.selectedIndex].value">
+                        <option value="?limit=10">10</option>
+                        <option selected="selected" value="?limit=12">12</option>
+                        <option value="?limit=20">20</option>
+                        <option value="?limit=50">50</option>
+                        <option value="?limit=100">100</option>
+                        <option value="?limit=250">250</option>
+                        <option value="?limit=500">500</option>
+                    </select>
+                </div>
+                <div class="sort">
+                    <span>Sắp xếp</span>
+                    <select class="selectProductSort" id="lbsort" onchange="window.location.href = this.options[this.selectedIndex].value">
+                        <option selected="selected" value="?sort=index&amp;order=asc">Mặc định</option>
+                        <option value="?sort=price&amp;order=asc">Gi&#225; tăng dần</option>
+                        <option value="?sort=price&amp;order=desc">Gi&#225; giảm dần</option>
+                        <option value="?sort=name&amp;order=asc">T&#234;n sản phẩm: A to Z</option>
+                        <option value="?sort=name&amp;order=desc">T&#234;n sản phẩm: Z to A</option>
+                    </select>
+                </div>
+            </nav>*@
+        <div class="product-block product-grid row clearfix">
+            @if (Model.Count > 0)
+            {
+                foreach (TB_SERVICES item in Model)
+                {
+                    <div class="col-md-3 col-sm-3 col-xs-12 product-resize product-item-box">
+                        <div class="product-item">
+                            <div class="image image-resize">
+                                <a href="/Services/Detail?Id=@item.ServiceId" title="@item.ServiceName">
+                                    <img class="img-responsive" src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==""+item.ServiceId).Select(x=>x.FilePath).FirstOrDefault())" alt="@item.ServiceName" title="@item.ServiceName" />
+                                </a>
+                                <div class="ribbon">
+                                </div>
+                                <div class="newst-img">
+                                    <a href="/Services/Detail?Id=@item.ServiceId" title=""><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="right-block">
+                                <h2 class="name">
+                                    <a href="/Services/Detail?Id=@item.ServiceId" title="">@item.ServiceName</a>
+                                </h2>
+                                <div class="price">
+                                    <span class="price-new">@string.Format("{0:N0}", item.ServicePrice)&nbsp;@item.ServiceUnit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div>Không có dịch vụ.</div>
+            }
+        </div>
+        @*<div class="navigation">
+                <ul class="pagination">
+                    <li>
+                        <a href="?page=1" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="?limit=10&amp;page=1">1</a></li>
+                    <li><a href="?limit=10&amp;page=2">2</a></li>
+                    <li>
+                        <a href="?page=2" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>*@
+    </section>
+</div>

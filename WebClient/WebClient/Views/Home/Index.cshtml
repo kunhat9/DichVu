@@ -1,0 +1,323 @@
+﻿@using CORE.Tables
+@using WebClient.Configuration
+
+@model List<TB_SERVICES>
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    List<TB_FILES> files = (List<TB_FILES>)ViewBag.Files;
+    List<TB_FILES> slider = (List<TB_FILES>)ViewBag.FileSlider;
+    List<TB_SLIDERS> list = (List<TB_SLIDERS>)ViewBag.Slider;
+}
+
+<style>
+    .column_container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+        .column_container > .column-inner{
+            box-sizing: border-box;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 100%;
+        }
+        
+    .aio-icon-img {
+        font-size:100px;
+        display:inline-block;
+    }
+
+    .aio-icon-img .img-icon {
+        width: 1em;
+        max-width: 100% !important;
+        -webkit-border-radius: 0 !important;
+        border-radius: 0 !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        display: block;
+        font-size: inherit;
+    }
+    
+    .style_2 .aio-icon-box:hover .aio-icon, .style_2 .aio-icon-box:hover .img-icon {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    @@media (min-width: 768px) {
+    }
+</style>
+@if (list != null && list.Count > 0)
+{
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                @for (var i = 0; i < list.Count; i++)
+                {
+                    <li data-target="#myCarousel" data-slide-to="@i" @if (i == 0) { <text> class="active" </text>  }></li>
+                }
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="carousel-inner">
+                    @for (var i = 0; i < list.Count; i++)
+                    {
+                        TB_SLIDERS item = list[i];
+                        <div class="item @if (i == 0) {<text>active</text> }">
+                            <img src='@(AppConfigInfo.Images + slider.Where(x => Int32.Parse(x.FileReferenceId) == item.SliderId && x.FileType.Equals("SLIDER")).Select(x => x.FilePath).FirstOrDefault())' alt="@item.SliderName" style="width:100%;height: 300px;">
+                            <div class="carousel-caption">
+                                @*<h3>@item.SliderName</h3>
+                                <p>@item.SliderContent</p>*@
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+}
+<!-- Dịch vụ: BEGIN -->
+<div class="col-md-12">
+    <section class="product-content clearfix">
+        <h1 class="title clearfix"><span>Dịch vụ</span></h1>
+        <div class="product-block product-grid row clearfix">
+            @if (Model != null)
+            {
+                foreach (TB_SERVICES item in Model)
+                {
+                    <div class="col-md-3 col-sm-3 col-xs-12 product-resize product-item-box">
+                        <div class="product-item">
+                            <div class="image image-resize">
+                                <a href="/Services/Detail?Id=@item.ServiceId" title="@item.ServiceName">
+                                    <img class="img-responsive" src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==""+item.ServiceId).Select(x=>x.FilePath).FirstOrDefault())" alt="@item.ServiceName" title="@item.ServiceName" />
+                                </a>
+                                <div class="ribbon">
+                                </div>
+                                <div class="newst-img">
+                                    <a href="/Services/Detail?Id=@item.ServiceId" title=""><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="right-block">
+                                <h2 class="name">
+                                    <a href="/Services/Detail?Id=@item.ServiceId" title="">@item.ServiceName</a>
+                                </h2>
+                                <div class="price">
+                                    <span class="price-new">@string.Format("{0:N0}", item.ServicePrice)&nbsp;@item.ServiceUnit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div>Không có dịch vụ.</div>
+            }
+        </div>
+    </section>
+</div>
+<!-- Dịch vụ: END -->
+<!-- Tiện ích: BEGIN -->
+<div data-vc-full-width="true" data-vc-full-width-init="true" class="row wpb_row row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp custom_1527063715329 row-has-fill wpb_start_animation animated"
+     style="left: -145px; position: relative; box-sizing: border-box; width: 1519px; padding-left: 145px; padding-right: 144px;">
+    <div class="wpb_column column_container col-sm-12">
+        <div class="column-inner">
+            <div class="wpb_wrapper">
+                <div class="wpb_text_column wpb_content_element ">
+                    <div class="wpb_wrapper">
+                        <h2 style="text-align: center;">
+                            <strong><span style="color: #000000;">NHỮNG TIỆN ÍCH BẠN NHẬN ĐƯỢC MIỄN PHÍ TẠI&nbsp;</span></strong>
+                            <strong><span style="color: #ff6300;">BISHUB COWORKING</span></strong>
+                        </h2>
+                    </div>
+                </div>
+                <div class="wpb_text_column wpb_content_element ">
+                    <div class="wpb_wrapper">
+                        <p style="text-align: center;">
+                            <span style="font-weight: 400;">Được sử dụng 700m</span>
+                            <span style="font-weight: 400;">2</span>
+                            <span style="font-weight: 400;"> diện tích chung chỉ với chi phí từ 90.000 VND.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="empty_space" style="height: 32px"><span class="empty_space_inner"></span></div>
+                <div class="row wpb_row inner row-fluid">
+                    <div class="wpb_column column_container col-sm-1"><div class="column-inner"><div class="wpb_wrapper"></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6">
+                        <div class="column-inner">
+                            <div class="wpb_wrapper">
+                                <div class="aio-icon-component style_2">
+                                    <div id="Info-box-wrap-4108" class="aio-icon-box top-icon">
+                                        <div class="aio-icon-top">
+                                            <div class="ult-just-icon-wrapper">
+                                                <div class="align-icon" style="text-align:center;">
+                                                    <div class="aio-icon-img">
+                                                        <img class="img-icon" alt="null" src="~/Images/Le-Tan.png">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><span style="color: #333300;"><b>LỄ TÂN</b></span><br><strong>PHÒNG HỌP</strong></p><p></p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-4180" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/smoke.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">KHÔNG GIAN SÂN VƯỜN</span></strong><br> <strong><span style="color: #333300;">PHÒNG HÚT THUỐC</span></strong></p><p></p></div></div></div></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-7707" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/yoga.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">KHU TẬP</span></strong><br> <strong><span style="color: #333300;">YOGA</span></strong></p><p></p></div></div></div></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-6225" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/print.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">IN ẤN</span></strong><br> <strong><span style="color: #333300;">MIỄN PHÍ</span></strong></p><p></p></div></div></div></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6 hidden-xs"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-3969" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/kitchen.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">KHU BẾP VÀ</span></strong><br> <strong><span style="color: #333300;">NGHỈ TRƯA</span></strong></p><p></p></div></div></div></div></div></div><div class="wpb_column column_container col-sm-1 hidden-xs"><div class="column-inner"><div class="wpb_wrapper"></div></div></div>
+                </div>
+                <div class="empty_space" style="height: 32px"><span class="empty_space_inner"></span></div>
+                <div class="row wpb_row inner row-fluid">
+                    <div class="wpb_column column_container col-sm-1 hidden-xs"><div class="column-inner"><div class="wpb_wrapper"></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-6257" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/phone.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">PHÒNG ĐIỆN THOẠI</span></strong><br> <strong><span style="color: #333300;">RIÊNG BIỆT</span></strong></p><p></p></div></div></div></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-9290" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/tea.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">TRÀ CAFE</span></strong><br> <strong><span style="color: #333300;">MIỄN PHÍ</span></strong></p><p></p></div></div></div></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-7949" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/bi-a.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">KHU GIẢI TRÍ</span></strong><br> <strong><span style="color: #333300;">GHẾ MASSAGE</span></strong></p><p></p></div></div></div></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-3397" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/wifi.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">INTERNET</span></strong><br> <strong><span style="color: #333300;">TỐC ĐỘ CAO</span></strong></p><p></p></div></div></div></div></div></div>
+                    <div class="wpb_column column_container col-sm-2 col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-3200" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="~/Images/book.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><span style="color: #333300;"><b>THƯ VIỆN</b></span></p><p></p></div></div></div></div></div></div><div class="wpb_column column_container col-sm-2 hidden-lg hidden-md col-xs-6"><div class="column-inner"><div class="wpb_wrapper"><div class="aio-icon-component style_2"><div id="Info-box-wrap-5580" class="aio-icon-box top-icon"><div class="aio-icon-top"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;"><div class="aio-icon-img"> <img class="img-icon" alt="null" src="https://bishub.vn/wp-content/uploads/2018/06/kitchen.png"></div></div></div></div><div class="aio-icon-description ult-responsive"><p></p><p style="text-align: center;"><strong><span style="color: #333300;">KHU BẾP VÀ</span></strong><br> <strong><span style="color: #333300;">NGHỈ TRƯA</span></strong></p><p></p></div></div></div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Tiện ích: END -->
+
+<script>
+    $("#view_financy").click(function () {
+        $("#financy").toggleClass("hidden");
+    })
+
+    $("#view_revenue").click(function () {
+        $("#revenue").toggleClass("hidden");
+    })
+    $(".txtCurrency").each(function () {
+        $(this).text(Features.FormatCurency($(this).text().split(",")[0]));
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //var str = location.href.toLowerCase();
+        var str = location.pathname.toLowerCase();
+        $("ul.menu li").removeClass("active");
+        $("ul.menu li a").each(function () {
+            if ($(this).data("active") && str.length <= $(this).data("active").length && str.indexOf($(this).data("active").toLowerCase()) >= 0) {
+                $(this).parent().addClass("active");
+            }
+        });
+        $("ul.topmenu li").css("font-weight", "normal");
+        $("ul.topmenu li a").each(function () {
+            if ($(this).data("active") && str.indexOf($(this).data("active").toLowerCase()) >= 0) {
+                $(this).parent().css("font-weight", "bold");
+            }
+        });
+
+        jQuery("#menu-icon").on("click", function () {
+            jQuery(".sf-menu-phone").slideToggle();
+            jQuery(this).toggleClass("active");
+        });
+
+        jQuery('.sf-menu-phone').find('li.parent').append('<i class="fa fa-angle-down"></i>');
+        jQuery('.sf-menu-phone li.parent i').on("click", function () {
+            if (jQuery(this).hasClass('fa-angle-up')) {
+                jQuery(this).removeClass('fa-angle-up').parent('li.parent').find('> ul').slideToggle();
+            } else {
+                jQuery(this).addClass('fa-angle-up').parent('li.parent').find('> ul').slideToggle();
+            }
+        });
+
+        $('ul.tree.dhtml').hide();
+
+        //to do not execute this script as much as it's called...
+        if (!$('ul.tree.dhtml').hasClass('dynamized')) {
+            //add growers to each ul.tree elements
+            $('ul.tree.dhtml ul').prev().before("<span class='grower OPEN'> </span>");
+
+            //dynamically add the '.last' class on each last item of a branch
+            $('ul.tree.dhtml ul li:last-child, ul.tree.dhtml li:last-child').addClass('last');
+
+            //collapse every expanded branch
+            $('ul.tree.dhtml span.grower.OPEN').addClass('CLOSE').removeClass('OPEN').parent().find('ul:first').hide();
+            $('ul.tree.dhtml').show();
+
+            //open the tree for the selected branch
+            $('ul.tree.dhtml .selected').parents().each(function () {
+                if ($(this).is('ul'))
+                    toggleBranch($(this).prev().prev(), true);
+            });
+            toggleBranch($('ul.tree.dhtml .selected').prev(), true);
+
+            //add a fonction on clicks on growers
+            $('ul.tree.dhtml span.grower').click(function () {
+                toggleBranch($(this));
+            });
+            //mark this 'ul.tree' elements as already 'dynamized'
+            $('ul.tree.dhtml').addClass('dynamized');
+
+            $('ul.tree.dhtml').removeClass('dhtml');
+        }
+    });
+    $("#btnsearch").click(function () {
+        SearchProduct();
+    });
+    $("#txtsearch").keydown(function (event) {
+        if (event.keyCode == 13) {
+            SearchProduct();
+        }
+    });
+    function SearchProduct() {
+        var key = $('#txtsearch').val();
+        if (key == '' || key == 'Tìm kiếm...') {
+            $('#txtsearch').focus();
+            return;
+        }
+        var group = $('#lbgroup').val();
+        window.location = '/Products/Search?group=' + group + '&key=' + key;
+    }
+    $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop != 0) {
+            $(".navigation-menu").addClass("navbar-fixed-top");
+            return false;
+        } else {
+            $(".navigation-menu").removeClass("navbar-fixed-top");
+            return false;
+        }
+    });
+
+    //animate the opening of the branch (span.grower jQueryElement)
+    function openBranch(jQueryElement, noAnimation) {
+        jQueryElement.addClass('OPEN').removeClass('CLOSE');
+        if (noAnimation)
+            jQueryElement.parent().find('ul:first').show();
+        else
+            jQueryElement.parent().find('ul:first').slideDown();
+    }
+    //animate the closing of the branch (span.grower jQueryElement)
+    function closeBranch(jQueryElement, noAnimation) {
+        jQueryElement.addClass('CLOSE').removeClass('OPEN');
+        if (noAnimation)
+            jQueryElement.parent().find('ul:first').hide();
+        else
+            jQueryElement.parent().find('ul:first').slideUp();
+    }
+
+    //animate the closing or opening of the branch (ul jQueryElement)
+    function toggleBranch(jQueryElement, noAnimation) {
+        if (jQueryElement.hasClass('OPEN'))
+            closeBranch(jQueryElement, noAnimation);
+        else
+            openBranch(jQueryElement, noAnimation);
+    }
+</script>

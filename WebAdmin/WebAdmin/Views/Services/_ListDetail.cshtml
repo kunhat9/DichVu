@@ -1,0 +1,149 @@
+﻿@model int
+@{
+    CORE.Tables.TB_SERVICES service = ViewBag.Service;
+    if (service == null)
+    {
+        service = new CORE.Tables.TB_SERVICES();
+    }
+    List<CORE.Tables.TB_TYPES> typeList = ViewBag.TypeList;
+    List<CORE.Tables.TB_FILES> files = (List<CORE.Tables.TB_FILES>)ViewBag.Images;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+            <!-- Voucher info -->
+            <div class="panel panel-flat">
+                <div class="panel-body" style="height: @(Model)px;max-height: @(Model)px;overflow-y: auto;">
+                    <form class="form-horizontal">
+                        <input type="hidden" id="SERVICE_ID" value="@service.ServiceId" />
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Tên dịch vụ :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" id="SERVICE_NAME" value="@service.ServiceName" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Giá tiền :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" id="SERVICE_PRICE" value="@service.ServicePrice" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Đơn vị :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" id="SERVICE_UNIT" value="@service.ServiceUnit" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Cơ sở :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" id="SERVICE_BASE" value="@service.ServiceBase" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Trạng thái :</label>
+                            <div class="col-md-6">
+                                <select class="select-search form-control not-empty" tabindex="-1" aria-hidden="true" id="SERVICE_STATUS">
+                                    <option value="">-- Chọn Trạng thái --</option>
+                                    <option value="A" @if (service.ServiceStatus == "A") { <text> selected</text>}>Sử dụng</option>
+                                    <option value="D" @if (service.ServiceStatus == "D") { <text> selected</text>}>Không sử dụng</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Loại dịch vụ :</label>
+                            <div class="col-md-6">
+                                <select class="select-search form-control not-empty" tabindex="-1" aria-hidden="true" id="SERVICE_TYPE" onchange="loadDetail()">
+                                    <option value="">-- Chọn Loại dịch vụ --</option>
+                                    @for (int i = 0; i < typeList.Count; i++)
+                                    {
+                                        if (service.ServiceTypeCode == typeList[i].TypeCode)
+                                        {
+                                            <option value=@typeList[i].TypeCode selected>@typeList[i].TypeName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value=@typeList[i].TypeCode>@typeList[i].TypeName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Ảnh giới thiệu :</label>
+                            @if (files == null || files.Count == 0)
+                            {
+                                <div class="col-md-6">
+                                    <input type="file" class="form-control" id="SERVICE_IMAGES" value="" accept="image/*" multiple />
+                                </div>
+                                <div class="col-md-12" id="SERVICE_IMG_SHOW" style="float: right;"></div>
+                            }
+                            else
+                            {
+                                <div class="col-md-9">
+                                    @foreach (CORE.Tables.TB_FILES file in files)
+                                    {
+                                        <img class="img-responsive" src="@file.FilePath" alt="@file.FileOrg" />
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Giới thiệu :</label>
+                                <textarea rows="4" class="form-control" style="resize: vertical;" id="SERVICE_CONTENT" placeholder="Nhập mô tả ngắn gọn">@service.ServiceContent</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Tính năng :</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="mcontent">
+                                    @{ Html.RenderAction("_ServiceDetail", "Services", new { typeCode = service.ServiceTypeCode, serviceId = service.ServiceId });}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /Voucher info -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+            <button type="button" onclick="UploadFile()" class="btn btn-primary btnSaveVoucher">Save changes</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#SERVICE_IMAGES').on("change", previewImages);
+    function previewImages() {
+        var $preview = $('#SERVICE_IMG_SHOW').empty();
+        if (this.files) $.each(this.files, readAndPreview);
+        function readAndPreview(i, file) {
+            if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                return alert(file.name + " is not an image");
+            } // else...
+            var reader = new FileReader();
+            $(reader).on("load", function () {
+                $preview.append($("<img/>", { src: this.result, height: 100 }));
+            });
+            reader.readAsDataURL(file);
+        }
+        $("#BLOG_IMG_SHOW img").each(function (e) {
+            $(e).css("height", "100%");
+            $(e).css("max-height", "100px");
+            $(e).css("width", "auto");
+        });
+    }
+
+    function loadDetail() {
+        $(".mcontent").load("/Services/_ServiceDetail?typeCode=" + $('#SERVICE_TYPE option:selected').val() + "&serviceId=" + $('#SERVICE_ID').val());
+    }
+</script>

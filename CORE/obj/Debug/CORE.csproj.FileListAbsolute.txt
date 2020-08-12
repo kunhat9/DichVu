@@ -1,0 +1,15 @@
+C:\Users\Nothing\Desktop\DichVu\CORE\bin\Debug\CORE.dll
+C:\Users\Nothing\Desktop\DichVu\CORE\bin\Debug\CORE.pdb
+C:\Users\Nothing\Desktop\DichVu\CORE\obj\Debug\CORE.csprojResolveAssemblyReference.cache
+C:\Users\Nothing\Desktop\DichVu\CORE\obj\Debug\CORE.dll
+C:\Users\Nothing\Desktop\DichVu\CORE\obj\Debug\CORE.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\bin\Debug\CORE.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\bin\Debug\CORE.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\obj\Debug\CORE.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\obj\Debug\CORE.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\DichVu\CORE\obj\Debug\CORE.csprojResolveAssemblyReference.cache
+C:\Users\AnhTuanPC\Desktop\DichVu\CORE\bin\Debug\CORE.dll
+C:\Users\AnhTuanPC\Desktop\DichVu\CORE\bin\Debug\CORE.pdb
+C:\Users\AnhTuanPC\Desktop\DichVu\CORE\obj\Debug\CORE.csprojResolveAssemblyReference.cache
+C:\Users\AnhTuanPC\Desktop\DichVu\CORE\obj\Debug\CORE.dll
+C:\Users\AnhTuanPC\Desktop\DichVu\CORE\obj\Debug\CORE.pdb

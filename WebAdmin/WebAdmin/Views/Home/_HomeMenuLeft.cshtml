@@ -1,0 +1,71 @@
+﻿@model List<CORE.Tables.SYS_ACTIONS>
+
+@helper GenMenu(List<CORE.Tables.SYS_ACTIONS> list, string parent)
+{
+foreach (var item in list)
+{
+    if (string.IsNullOrEmpty(parent) && item.IsRoot || item.ParentId == parent)
+    {
+        string aHref = !item.IsModule ? item.ControlPath : "";
+        string aClass = item.IsModule && list.Any(x => x.ParentId == item.Id) ? "has-ul" : "";
+        string spanStyle = item.IsModule ? "text-transform: uppercase;" : "";
+
+            <li class="">
+                <a href="@aHref" class="@aClass">
+                    @if (!string.IsNullOrEmpty(item.IconClass))
+                    {
+                        <text><i class="@item.IconClass"></i></text>
+                    }
+                    <span style="@spanStyle">@item.Name</span>
+                </a>
+                @if (item.IsModule)//list.Any(x => x.ACTION_PARENT_ID == item.ACTION_ID))
+                {
+                    <ul class="hidden-ul">
+                        @GenMenu(list, item.Id)
+                    </ul>
+                }
+            </li>
+    }
+}
+}
+
+<div class="sidebar-content">
+    <!-- User menu -->
+    <div class="sidebar-user">
+        <div class="category-content">
+            <div class="media">
+                <a href="#" class="media-left">
+                    <img src="~/Assets/images/placeholder.jpg" class="img-circle img-sm" alt="" />
+                </a>
+                <div class="media-body">
+                    <span class="media-heading text-semibold">@ViewBag.fullName</span>
+                    <div class="text-size-mini text-muted">
+                        <i class="icon-pin text-size-small"></i> &nbsp;@ViewBag.boxName
+                    </div>
+                </div>
+                <div class="media-right media-middle">
+                    <ul class="icons-list">
+                        <li><a href="#"><i class="icon-cog3"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /User menu -->
+    <!-- Main navigation -->
+    <div class="sidebar-category sidebar-category-visible">
+        <div class="category-content no-padding">
+            <ul class="navigation navigation-main navigation-accordion">
+                @GenMenu(Model, null)
+            </ul>
+        </div>
+    </div>
+    <!-- /Main navigation -->
+    <!-- Footer -->
+    <div class="footer">
+        <div class="text-muted">
+            All Rights Reserved<br>by GYMPRO- ADMIN 2018. &copy;
+        </div>
+    </div>
+    <!-- /Footer -->
+</div>

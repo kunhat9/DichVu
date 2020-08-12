@@ -1,0 +1,156 @@
+﻿@using CORE.Tables
+@using WebClient.Configuration
+
+@{
+    ViewBag.Title = "Tìm kiếm";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    List<TB_CATEGORIES> catList = ViewBag.CatList;
+    string group = ViewBag.Group;
+    List<TB_PRODUCTS> productList = ViewBag.ProductList;
+    List<TB_FILES> files = (List<TB_FILES>)ViewBag.Files;
+}
+
+<div class="col-md-3">
+    <div class="menu-product hidden-xs">
+        <h3>
+            @if (catList.Any(x => x.CategoryCode == group))
+            {
+                <span><a href="/Products/Search?group=@catList.Where(x => x.CategoryCode == group).Select(x => x.CategoryCode).FirstOrDefault()">@catList.Where(x => x.CategoryCode == group).Select(x => x.CategoryName).FirstOrDefault()</a></span>
+            }
+            else
+            {
+                <span><a href="/Products">Sản phẩm</a></span>
+            }
+        </h3>
+        @if (catList.Count > 0)
+        {
+            <ul class="level0">
+                @foreach (TB_CATEGORIES item in catList)
+                {
+                    <li class="sub0"><span><a href="/Products/Search?group=@item.CategoryCode"><i class="fa fa-check"></i>@item.CategoryName</a></span></li>
+                }
+            </ul>
+        }
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-product ul.level1').slideDown();
+        });
+    </script>
+</div>
+<div class="col-md-9">
+    <div class="breadcrumb clearfix">
+        <ul>
+            <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="home">
+                <a title="Đến trang chủ" href="/" itemprop="url"><span itemprop="title">Trang chủ</span></a>
+            </li>
+            @if (catList.Any(x => x.CategoryCode == group))
+            {
+                <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="category17 icon-li">
+                    <div class="link-site-more">
+                        <a title="" href="/Products/Search?group=@catList.Where(x => x.CategoryCode == group).Select(x => x.CategoryCode).FirstOrDefault()" itemprop="url">
+                            <span itemprop="title">@catList.Where(x => x.CategoryCode == group).Select(x => x.CategoryName).FirstOrDefault()</span>
+                            @*<img width="13" height="13" src="/Images/icon-link-more.jpg">*@
+                        </a>
+                        @*<ul class="s-c-n">
+                                <li class="sprites">
+                                    <a title="Áo thun nữ" href="/san-pham/ao-thun-nu-3593">
+                                        Áo thun nữ
+                                    </a>
+                                </li>
+                                <li class="sprites">
+                                    <a title="Áo sơ mi nữ" href="/san-pham/ao-so-mi-nu-3594">
+                                        Áo sơ mi nữ
+                                    </a>
+                                </li>
+                                <li class="sprites">
+                                    <a title="Váy nữ" href="/san-pham/vay-nu-3595">
+                                        Váy nữ
+                                    </a>
+                                </li>
+                                <li class="sprites">
+                                    <a title="Quần nữ" href="/san-pham/quan-nu-3596">
+                                        Quần nữ
+                                    </a>
+                                </li>
+                            </ul>*@
+                    </div>
+                </li>
+                @*<li class="icon-li"><strong>catList.Where(x => x.CategoryCode == group).Select(x => x.CategoryName).FirstOrDefault()</strong></li>*@
+            }
+            else
+            {
+                <li class="icon-li"><strong>Tìm kiếm</strong></li>
+            }
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $(".link-site-more").hover(function () { $(this).find(".s-c-n").show(); }, function () { $(this).find(".s-c-n").hide(); });
+    </script>
+    <section class="product-content clearfix">
+        <h1 class="title clearfix"><span>Sản phẩm</span></h1>
+        <nav class="navbar navbar-default product-filter">
+            <ul class="display">
+                <li id="grid" class="active grid"><a href="#" title="Grid"><i class="fa fa-th-large"></i></a></li>
+                <li id="list" class="list"><a href="#" title="List"><i class="fa fa-th-list"></i></a></li>
+            </ul>
+            <div class="limit">
+                <span>Sản phẩm/trang</span>
+                <select id="lblimit" name="lblimit" class="nb_item" onchange="window.location.href = this.options[this.selectedIndex].value">
+                    <option value="?limit=10">10</option>
+                    <option selected="selected" value="?limit=12">12</option>
+                    <option value="?limit=20">20</option>
+                    <option value="?limit=50">50</option>
+                    <option value="?limit=100">100</option>
+                    <option value="?limit=250">250</option>
+                    <option value="?limit=500">500</option>
+                </select>
+            </div>
+            <div class="sort">
+                <span>Sắp xếp</span>
+                <select class="selectProductSort" id="lbsort" onchange="window.location.href = this.options[this.selectedIndex].value">
+                    <option selected="selected" value="?sort=index&amp;order=asc">Mặc định</option>
+                    <option value="?sort=price&amp;order=asc">Giá tăng dần</option>
+                    <option value="?sort=price&amp;order=desc">Giá giảm dần</option>
+                    <option value="?sort=name&amp;order=asc">Tên sản phẩm: A to Z</option>
+                    <option value="?sort=name&amp;order=desc">Tên sản phẩm: Z to A</option>
+                </select>
+            </div>
+        </nav>
+        <div class="product-block product-grid row clearfix">
+            @if (productList.Count == 0)
+            {
+                <div>Không tìm thấy sản phẩm</div>
+            }
+            else
+            {
+                foreach (TB_PRODUCTS item in productList)
+                {
+                    <div class="col-md-3 col-sm-3 col-xs-12 product-resize product-item-box fixheight" style="height: 257px;">
+                        <div class="product-item">
+                            <div class="image image-resize" style="height: 150px;">
+                                <a href="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==item.ProductCode).Select(x=>x.FilePath).FirstOrDefault())" title="@item.ProductName">
+                                    <img class="img-responsive" src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==item.ProductCode).Select(x=>x.FilePath).FirstOrDefault())" alt="@item.ProductName" title="@item.ProductName">
+                                </a>
+                                <div class="ribbon">
+                                    <span class="hot">Hot</span>
+                                </div>
+                                <div class="newst-img"><a href="/Products/Detail?Id=@item.ProductCode" title="@item.ProductName"><i class="fa fa-search"></i></a></div>
+                            </div>
+                            <div class="right-block">
+                                <h2 class="name">
+                                    <a href="/Products/Detail?Id=@item.ProductCode" title="@item.ProductName">@item.ProductName</a>
+                                </h2>
+                                <div class="price">
+                                    <span class="price-new">@string.Format("{0:N0}", @item.ProductPrice)&nbsp;₫</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </section>
+    <!--Template--
+    --End-->
+</div>

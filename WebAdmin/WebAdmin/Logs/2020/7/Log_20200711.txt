@@ -1,0 +1,41 @@
+21:52:15
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+21:56:21
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+21:56:29
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+21:56:32
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+21:56:38
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+21:56:51
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56

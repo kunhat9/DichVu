@@ -1,0 +1,42 @@
+﻿@using CORE.Tables
+
+@model TB_BLOGS
+@{
+    ViewBag.Title = "Tin tức";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="col-md-9">
+    <div class="breadcrumb clearfix">
+        <ul>
+            <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="home">
+                <a title="Đến trang chủ" href="/" itemprop="url"><span itemprop="title">Trang chủ</span></a>
+            </li>
+            <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="icon-li">
+                <a title="Tin tức" href="/News" itemprop="url"><span itemprop="title">Tin tức</span></a>
+            </li>
+            <li class="icon-li"><strong>@Model.BlogName.ToUpper()</strong> </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $(".link-site-more").hover(function () { $(this).find(".s-c-n").show(); }, function () { $(this).find(".s-c-n").hide(); });
+    </script>
+    <div class="news-detail">
+        <div class="news-block">
+            <h1>@Model.BlogName.ToUpper()</h1>
+            <div class="date">@Model.BlogDateCreate.ToString("dd/MM/yyyy")</div>
+            <div class="content">
+                @Model.BlogContent
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="menu-news">
+        <h3><span>Tin tức</span></h3>
+        <ul class="level0">
+            <li><a href="/News/Index?Type=KM"><i class="fa fa-arrow-circle-o-right"></i>Tin khuyến mãi</a></li>
+            <li><a class="active" href="/News/Index?Type=TT"><i class="fa fa-arrow-circle-o-right"></i>Tin thị trường</a></li>
+        </ul>
+    </div>
+</div>

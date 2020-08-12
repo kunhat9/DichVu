@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Quản lý dịch vụ";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="page-header page-header-default">
+    <div class="page-header-content" style="background-color: #fcfcfc;">
+        <div class="page-title" style="padding: 20px 0;">
+            <h4>
+                <a href="javascript:void(0);" onclick="history.go(-1);"><i class="icon-arrow-left52 position-left"></i></a>
+                <span class="text-semibold">Dịch vụ</span> - Danh sách loại dịch vụ
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="div-h100 div-top69">
+    <div class="panel-body div-h100-body">
+        @*<div class="two-columns form-group">
+                <div class="left-full">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" id="" class="form-control txtSearch" placeholder="Nhập từ khóa">
+                        </div>
+                    </div>
+                </div>
+                <div class="right-fixed">
+                    <button type="button" id="" class="btn btn-primary btnSearch">Tìm kiếm</button>
+                </div>
+            </div>*@
+        <div class="div-h100 div-top56">
+            <div class="two-columns form-group">
+                @*<label><span>Hiển thị:</span> </label>
+                <select class="select2-selection--single select2-selection__rendered d-inline" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" tabindex="-1" aria-hidden="true">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>*@
+                <button class="btn btn-primary float-right btnAdd" type="button" data-toggle="modal">
+                    <i class="fa fa-plus"></i> Thêm mới
+                </button>
+            </div>
+            <div class="div-h100 div-top56">
+                <div class="data-table div-h100-body">
+                    @{ Html.RenderAction("_TypeList"); }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal_default" class="modal fade">
+    @{ Html.RenderAction("_TypeListDetail"); }
+</div>
+
+<script>
+    $(".btnAdd").click(function () {
+        $('#TYPE_CODE').val('');
+        $('#TYPE_NAME').val('');
+        $('#modal_default').modal('show');
+        $('#modal_default').attr("data-action", "insert");
+        $('#TYPE_CODE').attr('readonly', false);
+    });
+
+    function getParams() {
+        var params = {
+            type_code: $('#TYPE_CODE').val(),
+            type_name: $('#TYPE_NAME').val(),
+        };
+        return params;
+    }
+
+    function UploadFile() {
+        var param = getParams();
+        var url = "";
+        if ($('#modal_default').attr("data-action") == 'update') {
+            url = "/Ajax/UpdateSerivceType";
+        } else {
+            url = "/Ajax/InsertSerivceType";
+        }
+        $.ajax({
+            url: url,
+            type: "post",
+            data: param,
+        }).done(function (result) {
+            if (result.Code == "0") {
+                toastr.success(result.Result);
+                location.href = "/Services/TypeList";
+            } else {
+                toastr.info(result.Result);
+            }
+        });
+    }
+</script>

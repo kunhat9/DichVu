@@ -1,0 +1,108 @@
+﻿@model List<CORE.Tables.TB_REGISTERS>
+@{
+    int startPage = (ViewBag.pageNumber - 1) * ViewBag.pageSize + 1;
+    int? totalPage = (int?)ViewBag.maxNumber;
+}
+
+<style>
+    .table > thead > tr > td:first-child {
+        border-left: none;
+    }
+
+    .table > thead > tr > td {
+        border-left: 1px solid #ddd;
+    }
+
+    .table > tbody > tr > td:first-child {
+        border-left: none;
+    }
+
+    .table > tbody > tr > td {
+        border-left: 1px solid #ddd;
+    }
+</style>
+
+<div class="div-h100 @if (totalPage.HasValue && totalPage.Value > 1) { <text>div-bottom56</text> }">
+    <div class="div-h100-body">
+        <div class="well">
+            <table class="table">
+                <thead>
+                    <tr class="text-center" style="font-weight:bold">
+                        <td>STT</td>
+                        <td>Dịch vụ</td>
+                        <td>Tên người dùng</td>
+                        <td>Email</td>
+                        <td>Điện thoại</td>
+                        <td>Ngày thuê</td>
+                        <td>Số ngày</td>
+                        <td>Trạng thái</td>
+                        <td>Công cụ</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <td class="text-center">@(startPage + i)</td>
+                            <td>@Model[i].RegisterServiceId</td>
+                            <td>@Model[i].RegisterUserName</td>
+                            <td>@Model[i].RegisterUserEmail</td>
+                            <td>@Model[i].RegisterUserPhone</td>
+                            <td>@Model[i].RegisterDateBegin.ToString("dd/MM/yyyy")</td>
+                            <td>@Model[i].RegisterDateNumber</td>
+                            <td>
+                                @if (Model[i].RegisterStatus == "N")
+                                {<text>Mới đăng ký</text> }
+                                else
+                                {<text>Đã duyệt</text> }
+                            </td>
+                            <td class="text-center">
+                                <ul class="icons-list" style="display:flex">
+                                    <li class="btnEdit" data-id="@Model[i].RegisterId">
+                                        <button type="button" class="btn btn-default btn-sm text-primary-600" data-toggle="modal"><i class="icon-pencil7"></i></button>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="">
+    @{ Html.RenderAction("_Pagination", "Home", new { maxNumber = ViewBag.maxNumber, pageNumber = ViewBag.pageNumber });}
+</div>
+
+<script>
+    let url_get = "/Registers/_DanhSach";
+    let getParamsForSearch = (pageNumber, isNext) => {
+        return {
+            "keyText": $(".txtSearch").val(),
+            "dtpBegin": $(".dtpBegin").val(),
+            "pageNumber": pageNumber + isNext,
+            "pageSize": $(".select2-selection--single").val(),
+        };
+    }
+    function getDate(d) {
+        var arr = d.split('/');
+        if (arr.length != 3)
+            return '';
+        return arr[2] + arr[1] + arr[0];
+    }
+    var features = new Features(url_get, null, getParamsForSearch);
+
+    $(".btnEdit").click(function () {
+        var id = $(this).data("id");
+        $.ajax({
+            url: "/Registers/_ChiTiet",
+            type: "post",
+            data: { "registerId": id },
+        }).done(function (result) {
+            $('#modal_default').html(result);
+            $('#modal_default').modal('show');
+            $('#modal_default').attr("data-action", "update");
+            $('.select-search').select2();
+        });
+    });
+</script>

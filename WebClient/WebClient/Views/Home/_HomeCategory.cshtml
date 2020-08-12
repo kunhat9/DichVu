@@ -1,0 +1,38 @@
+﻿@using CORE.Tables
+
+@model List<TB_TYPES>
+@{
+}
+
+<div class="container">
+    <div class="wpb_content_element hidden-sm hidden-md hidden-lg">
+        <section class="widget-container ts-menus-widget">
+            <div type="button" class="collapsed" data-toggle="collapse" data-target="#menu_mobile" aria-expanded="false">
+                <div class="widget-title-wrapper">
+                    <h3 class="widget-title heading-title btn-navbar">Danh mục sản phẩm</h3>
+                </div>
+            </div>
+            <nav class="vertical-menu ts-mega-menu-wrapper navbar-collapse collapse" aria-expanded="false" id="menu_mobile" role="tablist">
+                <ul class='menu mobilemenu tree dhtml' id='menu-shop-by-category'>
+                    @foreach (TB_TYPES type in Model)
+                    {
+                        <li class="child">
+                            <a href="/Services/">
+                                <span class='menu-icon'><i class='fa '></i></span>
+                                <span class='menu-label'>@type.TypeName</span>
+                            </a>
+                            @*<ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class='menu-icon'><i class='fa fa-check'></i></span>
+                                            <span class='menu-label'>Áo thun nữ</span>
+                                        </a>
+                                    </li>
+                                </ul>*@
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </section>
+    </div>
+</div>

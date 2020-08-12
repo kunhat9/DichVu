@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<form action="/Home/Login" method="post">
+    <div class="panel panel-body login-form">
+        <div class="text-center">
+            <div class="icon-object border-slate-300 text-slate-300">
+                <i class="icon-reading"></i>
+            </div>
+            <h5 class="content-group">
+                Login to your account
+                <small class="display-block">Your credentials</small>
+            </h5>
+        </div>
+        <div class="form-group has-feedback has-feedback-left">
+            <input type="text" name="username" class="form-control" placeholder="Username" value="@ViewBag.username">
+            <div class="form-control-feedback">
+                <i class="icon-user text-muted"></i>
+            </div>
+        </div>
+        <div class="form-group has-feedback has-feedback-left">
+            <input type="password" name="password" class="form-control" placeholder="Password" value="@ViewBag.password">
+            <div class="form-control-feedback">
+                <i class="icon-lock2 text-muted"></i>
+            </div>
+        </div>
+        <div class="form-group login-options">
+            <label style="@if (string.IsNullOrEmpty(ViewBag.error)) { <text>display:none;</text> } else { <text>display:block;</text> }">@ViewBag.error</label>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="remember" class="styled" @if (!string.IsNullOrEmpty(ViewBag.password)) { <text> checked="checked" </text>    } />
+                        Remember
+                    </label>
+                </div>
+                <div class="col-sm-6 text-right">
+                    @*<a href="/Home/Forgot">Forgot password?</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn bg-blue btn-block">
+                Login<i class="icon-arrow-right14 position-right"></i>
+            </button>
+        </div>
+    </div>
+    <div>
+        <input type="hidden" name="url" value=@ViewBag.url />
+    </div>
+</form>

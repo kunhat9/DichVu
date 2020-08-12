@@ -1,0 +1,142 @@
+﻿@using CORE.Tables
+
+@{
+    ViewBag.Title = "Quản lý dịch vụ";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+    List<TB_SERVICES> sList = ViewBag.ServiceList;
+    int selected = ViewBag.Selected ?? 0;
+}
+
+<div class="page-header page-header-default">
+    <div class="page-header-content" style="background-color: #fcfcfc;">
+        <div class="page-title" style="padding: 20px 0;">
+            <h4>
+                <a href="javascript:void(0);" onclick="history.go(-1);"><i class="icon-arrow-left52 position-left"></i></a>
+                <span class="text-semibold">Dịch vụ</span> - Danh sách thực đơn
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="div-h100 div-top69">
+    @if (sList == null || sList.Count == 0)
+    {
+        <div>Không có sự kiện</div>
+    }
+    else
+    {
+        <div class="panel-body div-h100-body">
+            <div class="two-columns form-group">
+                <div class="left-full">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <select class="select-search form-control not-empty serviceId" tabindex="-1" aria-hidden="true" @if (selected != 0) { <text> disabled</text>}>
+                                <option value="">-- Chọn Dịch vụ --</option>
+                                @foreach (TB_SERVICES s in sList)
+                                {
+                                    <option value="@s.ServiceId" @if (s.ServiceId == selected) { <text> selected</text>}>@s.ServiceName - Id:@s.ServiceId</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                @if (selected == 0)
+                {
+                    <div class="right-fixed">
+                        <button type="button" class="btn btn-primary btnSearch">Tìm kiếm</button>
+                    </div>
+                }
+                else
+                {
+                    <div class="right-fixed">
+                        <button type="button" class="btn btn-primary btnAdd"><i class="fa fa-plus"></i> Thêm mới</button>
+                    </div>
+                }
+            </div>
+            <div class="div-h100 div-top56">
+                <div class="data-table div-h100-body">
+                    @{Html.RenderAction("_MenuList");}
+                </div>
+            </div>
+        </div>
+                        }
+</div>
+@*@if (selected != 0)
+{*@
+    <div id="modal_default" class="modal fade">
+        @{ Html.RenderAction("_MenuListDetail", new { serviceId = @selected, menuId = 0 }); }
+    </div>
+            //}
+
+<script>
+    $(".btnAdd").click(function () {
+        $('#MENU_ID').val('');
+        $('#MENU_NAME').val('');
+        $('#MENU_NUM').val('');
+        $('#MENU_PRICE').val('');
+        $('#MENU_STATUS').val('');
+        $('#MENU_NOTE').val('');
+        $('.mcontent').html('');
+        $('#modal_default').modal('show');
+        $('#modal_default').attr("data-action", "insert");
+    });
+
+    function getGroups() {
+        var list = [];
+        $('.mcontent').find('.pnlGroup').each(function () {
+            list.unshift({
+                'GroupId': $($(this).find('input.groupId')[0]).val() || 0,
+                'GroupName': $($(this).find('input.groupName')[0]).val(),
+                'GroupDetails': getDetails($(this).find('div.pnlContent')[0])
+            });
+        });
+        return list;
+    }
+
+    function getDetails(e) {
+        var list = [];
+        $(e).find('.form-group').each(function () {
+            list.push({
+                'DetailId': $($(this).find('input.detailId')[0]).val() || 0,
+                'DetailName': $($(this).find('input.detailName')[0]).val(),
+            });
+        });
+        return list;
+    }
+
+    function getParams() {
+        var params = {
+            menu_id: $('#MENU_ID').val() || 0,
+            menu_service_id: $('#MENU_SERVICE_ID').val() || 0,
+            menu_name: $('#MENU_NAME').val(),
+            menu_num: $('#MENU_NUM').val(),
+            menu_price: $('#MENU_PRICE').val(),
+            menu_status: $('#MENU_STATUS :selected').val(),
+            menu_note: $('#MENU_NOTE').val(),
+            details: getGroups()
+        };
+        return params;
+    }
+
+    function UploadFile() {
+        var param = getParams();
+        var url = "";
+        if ($('#modal_default').attr("data-action") == 'update') {
+            url = "/Ajax/UpdateMenu";
+        } else {
+            url = "/Ajax/InsertMenu";
+        }
+        $.ajax({
+            url: url,
+            type: "post",
+            data: param,
+        }).done(function (result) {
+            if (result.Code == "0") {
+                toastr.success(result.Result);
+                location.href = "/Services/MenuList";
+            } else {
+                toastr.info(result.Result);
+            }
+        });
+    }
+</script>

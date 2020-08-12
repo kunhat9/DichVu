@@ -1,0 +1,76 @@
+﻿@using CORE.Views
+@{
+    List<V_Group_Menu> list = ViewBag.Details;
+    bool view = true;
+}
+<style>
+    .modal-header {
+        position: relative;
+        padding: 0 20px;
+        border-bottom: 1px solid transparent;
+    }
+
+    .panel {
+        margin-bottom: 0px;
+        border-color: #dddddd;
+        color: #333333;
+    }
+</style>
+
+<div class="row">
+    @foreach (var item in list)
+    {
+        <div class="col-md-6 col-xs-12 form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <label style="text-transform: uppercase;">@item.MgroupName</label>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var d in item.MgroupDetail)
+                {
+                    <div class="col-md-12">
+                        <div class="radio" style="margin: 0;">
+                            <input type="radio" value="@d.MdetailId" name="@item.MgroupId" onclick="selectMenu(this)" /><label>
+                                @if (!view)
+                                {<text></text>}@d.MdetailName
+                            </label>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    let _menuDetails = @Html.Raw(Json.Encode(list));
+    let dataMenuSelect = [];
+    function selectMenu(evt) {
+        
+        for(var i = 0 ; i < _menuDetails.length ; i++) {
+            var item = _menuDetails[i];
+            for (var j = 0; j < item.MgroupDetail.length; j++) {
+                var d = item.MgroupDetail[j];
+                var radioValue = $("input[name='" + item.MgroupId + "']:checked").val();
+                if(radioValue == evt.value){
+                    var a = {
+                        MdetailId : evt.value,
+                        MgroupId : evt.name
+
+                    }
+                    if(dataMenuSelect.filter(x=>x.MgroupId == evt.name).length ==0){
+                        dataMenuSelect.push(a);
+                    }
+                  
+                }
+               
+            }
+        }
+        debugger;
+        localStorage.setItem("dataMenuSelect",JSON.stringify(dataMenuSelect));
+    }
+    
+  
+
+</script>

@@ -1,0 +1,122 @@
+﻿@using CORE.Tables
+
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<style>
+    .table > thead > tr > td:first-child {
+        border-left: none;
+    }
+
+    .table > thead > tr > td {
+        border-left: 1px solid #dddddd;
+    }
+
+    .table > tbody > tr > td:first-child {
+        border-left: none;
+    }
+
+    .table > tbody > tr > td {
+        border-left: 1px solid #dddddd;
+    }
+</style>
+
+<div class="page-header page-header-default">
+    <div class="page-header-content" style="background-color: #fcfcfc;">
+        <div class="page-title" style="padding: 20px 0;">
+            <h4>Trang chủ</h4>
+        </div>
+    </div>
+</div>
+<div class="div-h100 div-top69">
+    <div class="panel-body div-h100-body">
+        <div class="row" style="height: auto;">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div id="view_financy" class="panel bg-teal-400">
+                    <div class="panel-body">
+                        <h3 class="no-margin">0</h3>
+                        <span style="text-transform:uppercase;">Tổng số sản phẩm</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div id="view_revenue" class="panel bg-pink-400">
+                    <div class="panel-body">
+                        <h3 class="no-margin">3</h3>
+                        <span style="text-transform:uppercase;">Đăng ký dịch vụ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div id="view_profit" class="panel bg-blue-400">
+                    <div class="panel-body">
+                        <h3 class="no-margin">2</h3>
+                        <span style="text-transform:uppercase;">Hóa đơn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="panel bg-success-400">
+                    <div class="panel-body">
+                        <h3 class="no-margin">1,000,000 VNĐ</h3>
+                        <span style="text-transform:uppercase;">Doanh thu tháng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="height: auto;">
+            <div class="col-md-12 col-xs-12">
+                <div id="financy" class="panel panel-flat badge-inline">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            <i class="fa fa-shopping-cart" style="margin-right: 5px;"></i>
+                            <span>Danh sách sản phẩm</span>
+                        </h6>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="table-responsive panel-body" style="max-height:260px;min-height:260px;">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="text-center" style="font-weight: bold;">
+                                            <td>STT</td>
+                                            <td>Mã sản phẩm</td>
+                                            <td>Tên sản phẩm</td>
+                                            <td>Giá tiền</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @*@for (int i = 0; i < productList.Count; i++)
+                                        {
+                                            <tr>
+                                                <td class="text-center">@(i + 1)</td>
+                                                <td>@productList[i].ProductCode</td>
+                                                <td>@productList[i].ProductName</td>
+                                                <td>@string.Format("{0:N0}", productList[i].ProductPrice)</td>
+                                            </tr>
+                                        }*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#view_financy").click(function () {
+        $("#financy").toggleClass("hidden");
+    })
+
+    $("#view_revenue").click(function () {
+        $("#revenue").toggleClass("hidden");
+    })
+    $(".txtCurrency").each(function () {
+        $(this).text(Features.FormatCurency($(this).text().split(",")[0]));
+    });
+</script>

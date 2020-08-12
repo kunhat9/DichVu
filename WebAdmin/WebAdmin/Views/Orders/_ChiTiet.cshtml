@@ -1,0 +1,60 @@
+﻿@model int
+@{
+    CORE.Tables.TB_ORDERS order = ViewBag.Order;
+    if (order == null)
+    {
+        order = new CORE.Tables.TB_ORDERS();
+    }
+    List<CORE.Tables.TB_SUPPLIERS> suppierList = ViewBag.SupplierList;
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h5 class="modal-title"></h5>
+        </div>
+        <div class="modal-body">
+            <!-- Voucher info -->
+            <div class="panel panel-flat">
+                <div class="panel-body" style="height: @(Model)px;max-height: @(Model)px;overflow-y: auto;">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Mã hóa đơn :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" value="@order.OrderCode" id="ORD_ID" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Số tiền :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" value="@order.OrderTotal" readonly />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Trạng thái :</label>
+                            <div class="col-md-6">
+                                <select class="select-search form-control not-empty" tabindex="-1" aria-hidden="true" id="ORD_STATE">
+                                    <option value="">-- Chọn Trạng thái --</option>
+                                    <option value="A" @if (order.OrderState == "A") { <text> selected</text>}>Mới đăng ký</option>
+                                    <option value="D" @if (order.OrderState == "D") { <text> selected</text>}>Đã duyệt</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Người thao tác :</label>
+                            <div class="col-md-6">
+                                <input type="text" maxlength="50" class="form-control not-empty" value="@order.OrderCurrentUserId" readonly />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /Voucher info -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+            <button type="button" onclick="UploadFile()" class="btn btn-primary btnSaveVoucher">Save changes</button>
+        </div>
+    </div>
+</div>

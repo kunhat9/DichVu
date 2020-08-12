@@ -1,0 +1,47 @@
+﻿@{
+    double pageStart;
+    double pageEnd;
+    if (ViewBag.maxNumber < 6)
+    {
+        pageStart = 1;
+        pageEnd = @ViewBag.maxNumber;
+    }
+    else
+    {
+        pageStart = @ViewBag.pageNumber - 2 >= 1 ? @ViewBag.pageNumber - 2 : 1;
+        pageEnd = @ViewBag.pageNumber + 2 >= @ViewBag.maxNumber ? @ViewBag.maxNumber : @ViewBag.pageNumber + 2;
+    }
+}
+
+@if (ViewBag.maxNumber > 1)
+{
+    <div class="text-right _danhSach div-p-20-0">
+        <ul class="pagination-sm twbs-default pagination">
+            <li class="class prev @if (ViewBag.pageNumber == pageStart) { <text>disabled</text> }">
+                <a class="page-link">Prev</a>
+            </li>
+            @if (pageStart > 1)
+            {
+                <li><a class="page-link"> ... </a></li>
+            }
+            @for (double i = pageStart; i <= pageEnd; i++)
+            {
+                if (i == ViewBag.pageNumber)
+                {
+                    <li class="page active"><a class="page-link">@i</a></li>
+                }
+                else
+                {
+                    <li class="page"><a class="page-link">@i</a></li>
+                }
+            }
+            @if (pageEnd < ViewBag.maxNumber)
+            {
+                <li><a class="page-link"> ... </a></li>
+            }
+            <li class="class next @if (ViewBag.pageNumber == pageEnd) { <text>disabled</text> }">
+                <a class="page-link">Next</a>
+            </li>
+        </ul>
+    </div>
+}

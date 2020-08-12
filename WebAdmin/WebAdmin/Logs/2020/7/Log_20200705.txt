@@ -1,0 +1,303 @@
+09:42:39
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+09:43:17
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+09:44:41
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+09:44:43
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+09:44:48
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\BlogsController.cs:line 53
+
+10:02:10
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:02:19
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ServicesController.cs:line 56
+
+10:04:31
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ServicesController._ListDetail(Int32 serviceId)
+
+10:04:44
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId)
+
+10:04:46
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId)
+
+10:04:57
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId)
+
+10:05:03
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId)
+
+10:05:11
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId)
+
+10:05:19
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId)
+
+10:05:25
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId)
+
+10:05:32
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.BlogsController._ChiTiet(Int32 blogId)
+
+10:05:42
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId)
+
+10:05:43
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId)
+
+10:06:07
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.SlidersController._ChiTiet(Int32 sliderId)
+
+10:11:54
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+10:12:01
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+15:11:09
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+15:11:20
+192.168.186.2
+UpdatePassword :
+Insert::'TB_CATEGORIES'.
+Violation of PRIMARY KEY constraint 'PK__TB_CATEG__371BA954D226781E'. Cannot insert duplicate key in object 'dbo.TB_CATEGORIES'. The duplicate key value is (DM2).
+The statement has been terminated.
+System.Exception: Insert::'TB_CATEGORIES'.
+Violation of PRIMARY KEY constraint 'PK__TB_CATEG__371BA954D226781E'. Cannot insert duplicate key in object 'dbo.TB_CATEGORIES'. The duplicate key value is (DM2).
+The statement has been terminated. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK__TB_CATEG__371BA954D226781E'. Cannot insert duplicate key in object 'dbo.TB_CATEGORIES'. The duplicate key value is (DM2).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CORE.Helpers.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 333
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 165
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 176
+   at CORE.Services.TB_CATEGORIESFactory.Insert(TB_CATEGORIES category) in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_CATEGORIESFactory.cs:line 12
+   at WebAdmin.Controllers.AjaxController.InsertCategory(String category_code, String category_name, String category_state, String category_note) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 552
+
+15:11:25
+192.168.186.2
+UpdatePassword :
+Insert::'TB_CATEGORIES'.
+Violation of PRIMARY KEY constraint 'PK__TB_CATEG__371BA954D226781E'. Cannot insert duplicate key in object 'dbo.TB_CATEGORIES'. The duplicate key value is (DM2).
+The statement has been terminated.
+System.Exception: Insert::'TB_CATEGORIES'.
+Violation of PRIMARY KEY constraint 'PK__TB_CATEG__371BA954D226781E'. Cannot insert duplicate key in object 'dbo.TB_CATEGORIES'. The duplicate key value is (DM2).
+The statement has been terminated. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK__TB_CATEG__371BA954D226781E'. Cannot insert duplicate key in object 'dbo.TB_CATEGORIES'. The duplicate key value is (DM2).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at CORE.Helpers.SqlHelper.ExecuteNonQuery(SqlConnection connection, CommandType commandType, String commandText, SqlParameter[] commandParameters) in C:\Users\Nothing\Desktop\DichVu\CORE\Helpers\SqlHelper.cs:line 333
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 165
+   --- End of inner exception stack trace ---
+   at CORE.Base.DataAccessTable`1.Insert(T businessObject, Boolean withKey) in C:\Users\Nothing\Desktop\DichVu\CORE\Base\DataAccessTable.cs:line 176
+   at CORE.Services.TB_CATEGORIESFactory.Insert(TB_CATEGORIES category) in C:\Users\Nothing\Desktop\DichVu\CORE\Services\TB_CATEGORIESFactory.cs:line 12
+   at WebAdmin.Controllers.AjaxController.InsertCategory(String category_code, String category_name, String category_state, String category_note) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\AjaxController.cs:line 552
+
+15:11:34
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+15:11:35
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+17:55:43
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+17:55:44
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+17:55:58
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+17:56:17
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+17:56:35
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+19:04:32
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+19:04:33
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+19:04:49
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+19:04:50
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+19:05:07
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+19:05:09
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72
+
+19:05:23
+192.168.186.2
+Blogs/_List :
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebAdmin.Controllers.ProductsController._ChiTiet(String productId) in C:\Users\Nothing\Desktop\DichVu\WebAdmin\WebAdmin\Controllers\ProductsController.cs:line 72

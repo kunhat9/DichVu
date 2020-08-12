@@ -1,0 +1,160 @@
+﻿@using CORE.Tables;
+
+@model List<TB_SERVICES>
+@{
+    ViewBag.Title = "Đăng ký dịch vụ";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+    int selected = (int)ViewBag.Selected;
+}
+<div class="col-md-12">
+    <div class="payment-content">
+        <h1 class="title"><span>Thanh toán</span></h1>
+        <form class="payment-block clearfix" id="checkout-container">
+            <div class="col-md-4 col-sm-12 col-xs-12 payment-step step2">
+                <h4>1. Thông tin đăng ký dịch vụ</h4>
+                <div class="step-preview clearfix">
+                    <h2 class="title">Thông tin đăng ký</h2>
+                    <div class="form-block">
+                        @*<div class="user-login"><a href="/Register">Đăng ký tài khoản mua hàng</a><a href="/Login">Đăng nhập</a></div>*@
+                        <label>Đăng ký dịch vụ không cần tài khoản</label>
+                        <div class="form-group"><input class="form-control" placeholder="Họ &amp; Tên" type="text" id="REG_USERNAME"></div>
+                        <div class="form-group"><input class="form-control" placeholder="Số điện thoại" type="text" id="REG_USERPHONE"></div>
+                        <div class="form-group"><input class="form-control" placeholder="Email" type="email" id="REG_USERMAIL"></div>
+                        <div class="form-group"><input class="form-control" placeholder="Địa chỉ" type="text" id="REG_ADDRESS"></div>
+                        <textarea class="form-control" rows="4" placeholder="Ghi chú" style="resize: vertical;" id="REG_NOTE"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 payment-step step3">
+                <h4>2. Thông tin gói dịch vụ</h4>
+                <div class="step-preview clearfix">
+                    <h2 class="title">Thông tin dịch vụ</h2>
+                    <div class="form-block">
+                        <div class="form-group">
+                            <select class="select-search form-control" id="REG_SERVICE" onchange="selectService()">
+                                <option value="">-- Chọn Dịch vụ --</option>
+                                @for (int i = 0; i < Model.Count; i++)
+                                {
+                                    <option value="@Model[i].ServiceId" @if (Model[i].ServiceId == selected) { <text> selected</text>}>@Model[i].ServiceName - @Model[i].ServiceBase</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group"><input class="form-control" placeholder="Ngày bắt đầu" type="date" id="REG_DATEBEGIN"></div>
+                        <div class="form-group"><input class="form-control" placeholder="Số ngày sử dụng" type="number" id="REG_DATENUMBER"></div>
+                    </div>
+                    <h2 class="title">Danh sách thực đơn</h2>
+                    <div class="form-block">
+                        <div class="form-group"><input class="form-control" placeholder="Số bàn" type="number" id="REG_MENUNUMBER"></div>
+                        <div class="form-group" id="REG_MENU">
+                            @{ Html.RenderAction("_MenuGroup", "Menus", new { serviceId = selected }); }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 payment-step step1">
+                <h4>3. Thông tin thực đơn</h4>
+                <div class="step-preview">
+                    <div id="MENU_DETAIL">
+
+                    </div>
+                    <div class="cart-info">
+                        <div class="cart-items">
+                            @*@foreach (CartModel item in Model)
+                            {
+                                <div class="cart-item clearfix">
+                                    <span class="image pull-left" style="margin-right:10px;">
+                                        <a href="/Products/Detail?Id=@item.ProductCode">
+                                            <img src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==item.ProductCode).Select(x=>x.FilePath).FirstOrDefault())" class="img-responsive">
+                                        </a>
+                                    </span>
+                                    <div class="product-info pull-left">
+                                        <span class="product-name">
+                                            <a href="/Products/Detail?Id=@item.ProductCode">@item.ProductName</a> x <span>@item.Quantity</span>
+                                        </span>
+                                    </div>
+                                    <span class="price">@string.Format("{0:N0}", item.Price * item.Quantity)₫</span>
+                                </div>
+                            }*@
+                        </div>
+                        <div class="total-price">
+                            Thành tiền  <label>@*@string.Format("{0:N0}", Model.Sum(x => x.Price * x.Quantity))đ*@</label>
+                        </div>
+                        <div class="btn-coupon hidden">
+                            <a href="#" class="btn btn-primary"><span></span>Sử dụng mã giảm giá </a>
+                        </div>
+                        <div class="use-coupon">
+                            <div class="form-group">
+                                <input placeholder="Nhập mã giảm giá" class="coupon-code form-control" id="voucher">
+                                <a class="btn btn-primary">Sử dụng</a>
+                            </div>
+                        </div>
+                        <div class="total-payment">
+                            Thanh toán <span>@*@string.Format("{0:N0}", Model.Sum(x => x.Price * x.Quantity) + 40000)đ*@</span>
+                        </div>
+                        <div class="button-submit">
+                            <button class="btn btn-default" type="button" onclick="cartPay()">Đặt hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        localStorage.removeItem("dataMenuSelect");
+        localStorage.removeItem("menuId");
+    });
+    function selectService() {
+        $.ajax({
+            url: "/Menus/_MenuGroup",
+            type: "post",
+            data: { "serviceId": $('#REG_SERVICE :selected').val() },
+        }).done(function (result) {
+            $('#REG_MENU').html(result);
+        });
+    }
+
+    function getParams() {
+        var params = {
+            reg_service: $('#REG_SERVICE option:selected').val(),
+            reg_datebegin: $('#REG_DATEBEGIN').val(),
+            reg_number: $('#REG_DATENUMBER').val(),
+
+            reg_name: $('#REG_USERNAME').val(),
+            reg_email: $('#REG_USERMAIL').val(),
+            reg_phone: $('#REG_USERPHONE').val(),
+    reg_table: $('#REG_MENUNUMBER').val(),
+
+            reg_note: $('#REG_NOTE').val(),
+
+            menuId: localStorage.getItem("menuId"),
+            listMenu: JSON.parse(localStorage.getItem("dataMenuSelect")),
+            voucher : $('#voucher').val()
+        };
+        return params;
+    }
+    function cartPay() {
+        var param = getParams();
+        //var a = JSON.parse(localStorage.getItem("dataMenuSelect"));
+        //var menuId = localStorage.getItem("menuId");
+
+        $.ajax({
+            url: "/Ajax/Register",
+            type: "post",
+            data: param,
+        }).done(function (result) {
+            if (result.Code == "0") {
+                //toastr.success(result.Result);
+                toastr.success('Đăng ký thành công, chúng tôi sẽ liên hệ với bạn sau khi xét duyệt.');
+                //location.href = "/Products/SupplierList";
+            } else {
+                toastr.info(result.Result);
+            }
+        });
+    }
+
+</script>

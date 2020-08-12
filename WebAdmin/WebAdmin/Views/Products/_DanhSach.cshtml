@@ -1,0 +1,109 @@
+﻿@model List<CORE.Tables.TB_PRODUCTS>
+@{
+    int startPage = (ViewBag.pageNumber - 1) * ViewBag.pageSize + 1;
+    int? totalPage = (int?)ViewBag.maxNumber;
+    List<CORE.Tables.TB_SUPPLIERS> supList = (List<CORE.Tables.TB_SUPPLIERS>)ViewBag.SupList;
+    List<CORE.Tables.TB_CATEGORIES> catList = (List<CORE.Tables.TB_CATEGORIES>)ViewBag.CatList;
+    if (supList == null) { supList = new List<CORE.Tables.TB_SUPPLIERS>(); }
+    if (catList == null) { catList = new List<CORE.Tables.TB_CATEGORIES>(); }
+}
+
+<style>
+    .table > thead > tr > td:first-child {
+        border-left: none;
+    }
+
+    .table > thead > tr > td {
+        border-left: 1px solid #ddd;
+    }
+
+    .table > tbody > tr > td:first-child {
+        border-left: none;
+    }
+
+    .table > tbody > tr > td {
+        border-left: 1px solid #ddd;
+    }
+</style>
+
+<div class="div-h100 @if (totalPage.HasValue && totalPage.Value > 1) { <text>div-bottom56</text> }">
+    <div class="div-h100-body">
+        <div class="well">
+            <table class="table">
+                <thead>
+                    <tr class="text-center" style="font-weight:bold">
+                        <td>STT</td>
+                        <td>Mã sản phẩm</td>
+                        <td>Tên sản phẩm</td>
+                        <td>Giá tiền</td>
+                        <td>Trạng thái</td>
+                        <td>Nhà cung cấp</td>
+                        <td>Danh mục</td>
+                        <td>Công cụ</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <td class="text-center">@(startPage + i)</td>
+                            <td>@Model[i].ProductCode</td>
+                            <td>@Model[i].ProductName</td>
+                            <td>@string.Format("{0:N0}", Model[i].ProductPrice)&nbsp;₫</td>
+                            <td>
+                                @if (Model[i].ProductState == "A")
+                                {<text>Kích hoạt</text> }
+                                else
+                                {<text>Không kích hoạt</text> }
+                            </td>
+                            <td>@supList.Where(x => x.SupplierCode == Model[i].ProductSupplierCode).Select(x => x.SupplierName + " (Mã: " + x.SupplierCode + ")").FirstOrDefault()</td>
+                            <td>@catList.Where(x => x.CategoryCode == Model[i].ProductCategoryCode).Select(x => x.CategoryName + " (Mã: " + x.CategoryCode + ")").FirstOrDefault()</td>
+                            <td class="text-center">
+                                <ul class="icons-list" style="display:flex">
+                                    <li class="btnEdit" data-id="@Model[i].ProductCode">
+                                        <button type="button" class="btn btn-default btn-sm text-primary-600" data-toggle="modal"><i class="icon-pencil7"></i></button>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="">
+    @{ Html.RenderAction("_Pagination", "Home", new { maxNumber = ViewBag.maxNumber, pageNumber = ViewBag.pageNumber });}
+</div>
+
+<script>
+    let url_get = "/Products/_DanhSach";
+    let getParamsForSearch = (pageNumber, isNext) => {
+        return {
+            "keyText": $(".txtSearch").val(),
+            "pageNumber": pageNumber + isNext,
+            "pageSize": $(".select2-selection--single").val(),
+        };
+    }
+    function getDate(d) {
+        var arr = d.split('/');
+        if (arr.length != 3)
+            return '';
+        return arr[2] + arr[1] + arr[0];
+    }
+    var features = new Features(url_get, null, getParamsForSearch);
+
+    $(".btnEdit").click(function () {
+        var id = $(this).data("id");
+        $.ajax({
+            url: "/Products/_ChiTiet",
+            type: "post",
+            data: { "productId": id },
+        }).done(function (result) {
+            $('#modal_default').html(result);
+            $('#modal_default').modal('show');
+            $('#modal_default').attr("data-action", "update");
+            $('.select-search').select2();
+        });
+    });
+</script>
