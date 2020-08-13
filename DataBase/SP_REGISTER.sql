@@ -21,6 +21,7 @@ CREATE PROCEDURE SP_REGISTER
 BEGIN TRY
 	BEGIN TRANSACTION
 	DECLARE @ecode VARCHAR(50) = '00'
+	IF @menuId ='' OR menuId IS NULL SET menuId = NULL
 	DECLARE @price decimal(18,0)
 	DECLARE @chargeService decimal(18,0) = (select ServicePrice from TB_SERVICES where ServiceId = @reg_service)
 	DECLARE @typeVoucher varchar(50) = (select VoucherType from TB_VOUCHERS WHERE VoucherCode = @voucherCode AND VoucherServiceId = @reg_service)
