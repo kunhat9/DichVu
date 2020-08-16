@@ -21,6 +21,7 @@ CREATE PROCEDURE SP_REGISTER
 BEGIN TRY
 	BEGIN TRANSACTION
 	DECLARE @ecode VARCHAR(50) = '00'
+	IF @menuId ='' OR @menuId IS NULL SET @menuId = NULL
 	DECLARE @price decimal(18,0)
 	DECLARE @chargeService decimal(18,0) = (select ServicePrice from TB_SERVICES where ServiceId = @reg_service)
 	DECLARE @typeVoucher varchar(50) = (select VoucherType from TB_VOUCHERS WHERE VoucherCode = @voucherCode AND VoucherServiceId = @reg_service)
@@ -29,18 +30,18 @@ BEGIN TRY
 		BEGIN
 		DECLARE @count decimal(18,0) = (select VoucherNum from TB_VOUCHERS WHERE VoucherCode = @voucherCode AND VoucherServiceId = @reg_service)
 		-- giam tien
-		SET @price = (@chargeService - @count) + @priceMenu*@reg_table
+		SET @price = (@chargeService - @count)
  
 		END
 	ELSE IF @typeVoucher ='P' 
 		BEGIN
 			-- %
 			DECLARE @countVoucher decimal(18,2) = (select VoucherNum from TB_VOUCHERS WHERE VoucherCode = @voucherCode AND VoucherServiceId = @reg_service)
-			SET @price = (@chargeService-(@chargeService*@countVoucher/100)) + (@priceMenu*@reg_table)
+			SET @price = (@chargeService-(@chargeService*@countVoucher/100))
 		END
 	ELSE 
 		BEGIN
-			SET @price = @chargeService + (@priceMenu*@reg_table)
+			SET @price = @chargeService
 		END
 	IF(@reg_user ='' OR @reg_user IS NULL) SET @reg_user = NULL
 	CREATE TABLE #TempId(
@@ -62,6 +63,7 @@ BEGIN TRY
       ,[RegisterVoucherType]
       ,[RegisterMenuNumber]
       ,[RegisterMenuPrice]
+	  ,[RegisterServicePrice]
       ,[RegisterMenuId]
       ,[RegisterServiceId]
       ,[RegisterUserId]
@@ -81,7 +83,8 @@ BEGIN TRY
 	,NULL -- voucher num
 	,NULL -- voucher type
 	,@reg_number
-	,@price -- price
+	,@priceMenu -- price
+	,@price
 	,@menuId
 	,@reg_service
 	,@reg_user -- userId

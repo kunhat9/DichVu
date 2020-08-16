@@ -103,7 +103,7 @@ namespace WebClient.Controllers
         {
             try
             {
-                List<TB_SERVICES> list = Services_Service.GetAll();
+                List<TB_SERVICES> list = Services_Service.GetAll().Where(x=>x.ServiceStatus.Equals("A")).ToList();
                 if (list == null) list = new List<TB_SERVICES>();
 
                 List<TB_FILES> file = Files_Service.GetAll().Where(x => x.FileType == "SERVICE").ToList();

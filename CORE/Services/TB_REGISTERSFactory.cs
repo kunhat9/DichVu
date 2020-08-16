@@ -1,5 +1,7 @@
 ﻿using CORE.Internal;
+using CORE.Internal.View;
 using CORE.Tables;
+using CORE.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,14 +41,15 @@ namespace CORE.Services
             return ecode;
         }
 
-        //public List<TB_REGISTERS> GetAllBy(string keyText, string startDate, string endDate, string total, string serviceId, string status, int pageNumber, int pageSize, out int count)
-        //{
-        //    List<TB_REGISTERS> list = new List<TB_REGISTERS>();
-        //    object cTemp;
-        //    TB_REGISTERSSql sql = new TB_REGISTERSSql();
-        //    list = sql.SelectFromStoreOutParam(AppSettingKeys.SP_REGISTER_GET_ALL_BY, out cTemp, keyText, startDate, endDate, total, serviceId, status, pageNumber, pageSize);
-        //    count = (int)cTemp;
-        //    return list;
-        //}
+        public List<V_Revenue> ReportChart(string serviceId, string menuId, string startDate, string endDate)
+        {
+            List<V_Revenue> list = new List<V_Revenue>();
+            list = new V_RevenueSql().SelectFromStore(AppSettingKeys.SP_REPORT_CHART,serviceId,menuId,startDate,endDate);
+            return list;
+        }
+        public List<TB_REGISTER_DETAILS> GetByRegisterId(int registerId)
+        {
+            return new TB_REGISTER_DETAILSSql().FilterByField("RdetailRegisterId", registerId);
+        }
     }
 }

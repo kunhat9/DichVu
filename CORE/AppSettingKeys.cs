@@ -15,5 +15,6 @@
         public const string SP_INSERT_SERVICE = "SP_InsertService";
         public const string SP_INSERT_MENU = "SP_InsertMenu";
         public const string SP_REGISTER = "SP_REGISTER";
+        public const string SP_REPORT_CHART = "SP_ReportChart";
     }
 }

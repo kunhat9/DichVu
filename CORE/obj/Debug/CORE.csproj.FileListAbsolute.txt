@@ -13,3 +13,8 @@ C:\Users\AnhTuanPC\Desktop\DichVu\CORE\bin\Debug\CORE.pdb
 C:\Users\AnhTuanPC\Desktop\DichVu\CORE\obj\Debug\CORE.csprojResolveAssemblyReference.cache
 C:\Users\AnhTuanPC\Desktop\DichVu\CORE\obj\Debug\CORE.dll
 C:\Users\AnhTuanPC\Desktop\DichVu\CORE\obj\Debug\CORE.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\CORE\bin\Debug\CORE.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\CORE\bin\Debug\CORE.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\CORE\obj\Debug\CORE.csprojResolveAssemblyReference.cache
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\CORE\obj\Debug\CORE.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\CORE\obj\Debug\CORE.pdb

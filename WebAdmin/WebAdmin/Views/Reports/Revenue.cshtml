@@ -1,19 +1,8 @@
 ﻿
 @{
     ViewBag.Title = "Báo cáo";
-    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    Layout = "~/Views/Shared/_BaoCaoLayout.cshtml";
 }
-
-<div class="page-header page-header-default">
-    <div class="page-header-content" style="background-color: #fcfcfc;">
-        <div class="page-title" style="padding: 20px 0;">
-            <h4>
-                <a href="javascript:void(0);" onclick="history.go(-1);"><i class="icon-arrow-left52 position-left"></i></a>
-                <span class="text-semibold">Báo cáo</span> - Biểu đồ doanh thu
-            </h4>
-        </div>
-    </div>
-</div>
 <div class="div-h100 div-top69">
     <div class="panel-body div-h100-body">
         <div class="well chart-container">
@@ -26,16 +15,21 @@
     $(function () {
         let data = @Html.Raw(Json.Encode(Model));
         let arr = [
-            ['Dịch vụ'],
-            ['Sản phẩm'],
-            //['Lợi nhuận']
+             ['x'],
+            ['Thực đơn'],
+            ['Thuê phòng']
+
         ];
-        console.log(data);
+        $('#datefrom').val('@DateTime.Now.AddDays(-29).ToString("dd/MM/yyyy")');
+        $('#dateto').val('@DateTime.Now.ToString("dd/MM/yyyy")');
+        
         for(let i=data.length - 1;i>=0;i--){
-            arr[0].push(data[i].Revenue);
-            arr[1].push(data[i].Cost);
-            //arr[2].push(data[i].Revenue - data[i].Cost);
+            arr[1].push(data[i].MenuPrice);
+            arr[2].push(data[i].ServicePrice);
+            arr[0].push(parseInt(new Date(data[i].DateCreated.match(/\d+/)[0] * 1).toLocaleDateString().split('/')[0]));
+
         }
+        console.log(arr);
         var line_chart = c3.generate({
             bindto: '#c3-line-chart',
             point: {
@@ -48,6 +42,7 @@
                 pattern: ['#4CAF50', '#F4511E', '#1E88E5']
             },
             data: {
+                x: 'x',
                 columns: arr,
                 type: 'spline'
             },
@@ -57,7 +52,7 @@
                 }
             }
         });
-
+        
         $(".sidebar-control").on('click', function () {
             line_chart.resize();
             chart_line_regions.resize();

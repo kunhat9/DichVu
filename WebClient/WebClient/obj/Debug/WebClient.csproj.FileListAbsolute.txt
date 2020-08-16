@@ -166,3 +166,45 @@ C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\New folder\DichVu\WebClient\WebClient\bi
 C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\New folder\DichVu\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
 C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\New folder\DichVu\WebClient\WebClient\obj\Debug\WebClient.dll
 C:\Users\ADMIN\Desktop\DoAn\Rent\DichVu\New folder\DichVu\WebClient\WebClient\obj\Debug\WebClient.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\csc.exe
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\vbc.exe
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\VBCSCompiler.exe
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\WebClient.dll.config
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\WebClient.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\WebClient.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\Antlr3.Runtime.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\CORE.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\Newtonsoft.Json.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Helpers.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Mvc.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Optimization.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Razor.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Webpages.Deployment.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Webpages.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Webpages.Razor.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\WebGrease.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\CORE.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\Antlr3.Runtime.pdb
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\Newtonsoft.Json.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Optimization.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Razor.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Webpages.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Webpages.Deployment.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Webpages.Razor.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Helpers.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\bin\System.Web.Mvc.xml
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\obj\Debug\WebClient.dll
+C:\Users\ADMIN\Desktop\DoAn\Rent\Service\DichVu\WebClient\WebClient\obj\Debug\WebClient.pdb

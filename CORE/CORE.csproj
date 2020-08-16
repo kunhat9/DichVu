@@ -66,6 +66,7 @@
     <Compile Include="Internal\TB_ORDERSSql.cs" />
     <Compile Include="Internal\TB_PRODUCTSSql.cs" />
     <Compile Include="Internal\TB_REGISTERSSql.cs" />
+    <Compile Include="Internal\TB_REGISTER_DETAILSSql.cs" />
     <Compile Include="Internal\TB_SERVICESSql.cs" />
     <Compile Include="Internal\TB_SERVICE_DETAILSSql.cs" />
     <Compile Include="Internal\TB_SLIDERSSql.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Internal\TB_VOUCHERSSql.cs" />
     <Compile Include="Internal\View\V_Details_ServiceSql.cs" />
     <Compile Include="Internal\View\V_Details_TypeSql.cs" />
+    <Compile Include="Internal\View\V_RevenueSql.cs" />
     <Compile Include="Internal\View\V_UserLoginInfo.cs" />
     <Compile Include="InvalidBusinessObjectException.cs" />
     <Compile Include="Models\SYS_User.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="Tables\TB_ORDERS.cs" />
     <Compile Include="Tables\TB_PRODUCTS.cs" />
     <Compile Include="Tables\TB_REGISTERS.cs" />
+    <Compile Include="Tables\TB_REGISTER_DETAILS.cs" />
     <Compile Include="Tables\TB_SERVICES.cs" />
     <Compile Include="Tables\TB_SERVICE_DETAILS.cs" />
     <Compile Include="Tables\TB_SLIDERS.cs" />

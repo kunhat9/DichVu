@@ -10,8 +10,8 @@ namespace CORE.Views
     public class V_Revenue : BusinessObject
     {
         public V_Revenue() { }
-        public int sMonth { get; set; }
-        public decimal Revenue { get; set; }
-        public decimal Cost { get; set; }
+        public DateTime DateCreated { get; set; }
+        public decimal MenuPrice { get; set; }
+        public decimal ServicePrice { get; set; }
     }
 }

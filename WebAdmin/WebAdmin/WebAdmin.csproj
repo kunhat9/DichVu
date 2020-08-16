@@ -2649,6 +2649,7 @@
     <Content Include="Views\Services\MenuList.cshtml" />
     <Content Include="Views\Services\_MenuList.cshtml" />
     <Content Include="Views\Services\_MenuListDetail.cshtml" />
+    <Content Include="Views\Registers\_MenuListDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

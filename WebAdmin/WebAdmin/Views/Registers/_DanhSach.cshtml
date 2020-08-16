@@ -2,8 +2,8 @@
 @{
     int startPage = (ViewBag.pageNumber - 1) * ViewBag.pageSize + 1;
     int? totalPage = (int?)ViewBag.maxNumber;
+    List<CORE.Tables.TB_SERVICES> listService = ViewBag.Service;
 }
-
 <style>
     .table > thead > tr > td:first-child {
         border-left: none;
@@ -21,7 +21,7 @@
         border-left: 1px solid #ddd;
     }
 </style>
-
+@using CORE.Helpers;
 <div class="div-h100 @if (totalPage.HasValue && totalPage.Value > 1) { <text>div-bottom56</text> }">
     <div class="div-h100-body">
         <div class="well">
@@ -35,6 +35,7 @@
                         <td>Điện thoại</td>
                         <td>Ngày thuê</td>
                         <td>Số ngày</td>
+                        <td>Số tiền</td>
                         <td>Trạng thái</td>
                         <td>Công cụ</td>
                     </tr>
@@ -44,12 +45,13 @@
                     {
                         <tr>
                             <td class="text-center">@(startPage + i)</td>
-                            <td>@Model[i].RegisterServiceId</td>
+                            <td>@(listService.FirstOrDefault(x=>x.ServiceId== Model[i].RegisterServiceId).ServiceName)</td>
                             <td>@Model[i].RegisterUserName</td>
                             <td>@Model[i].RegisterUserEmail</td>
                             <td>@Model[i].RegisterUserPhone</td>
                             <td>@Model[i].RegisterDateBegin.ToString("dd/MM/yyyy")</td>
                             <td>@Model[i].RegisterDateNumber</td>
+                            <td>@(ConvertDataWithView.Currency_ToView(Model[i].RegisterMenuPrice + Model[i].RegisterServicePrice)) </td>
                             <td>
                                 @if (Model[i].RegisterStatus == "N")
                                 {<text>Mới đăng ký</text> }
@@ -59,8 +61,14 @@
                             <td class="text-center">
                                 <ul class="icons-list" style="display:flex">
                                     <li class="btnEdit" data-id="@Model[i].RegisterId">
-                                        <button type="button" class="btn btn-default btn-sm text-primary-600" data-toggle="modal"><i class="icon-pencil7"></i></button>
+                                        <button type="button" class="btn btn-default btn-sm text-primary-600" data-toggle="modal" title="Xem chi tiết dịch vụ"><i class="icon-pencil7"></i></button>
                                     </li>
+                                    @if (Model[i].RegisterMenuId != 0)
+                                    {
+                                        <li class="btnMenu" data-id="@Model[i].RegisterId">
+                                            <button type="button" class="btn btn-default btn-sm text-primary-600" data-toggle="modal" title="Xem chi tiết thực đơn"><i class="icon-menu6"></i></button>
+                                        </li>
+                                    }
                                 </ul>
                             </td>
                         </tr>
@@ -76,6 +84,7 @@
 
 <script>
     let url_get = "/Registers/_DanhSach";
+    let data = @Html.Raw(Json.Encode(Model));
     let getParamsForSearch = (pageNumber, isNext) => {
         return {
             "keyText": $(".txtSearch").val(),
@@ -84,6 +93,20 @@
             "pageSize": $(".select2-selection--single").val(),
         };
     }
+    $(".btnMenu").click(function () {
+        var id = $(this).data("id");
+        
+        
+        $.ajax({
+            url: "/Registers/_MenuListDetail",
+            type: "post",
+            data: { "registerId": id },
+        }).done(function (result) {
+            $('#modal_default').html(result);
+            $('#modal_default').modal('show');
+            //$('#modal_default').attr("data-action", "update");
+        });
+    });
     function getDate(d) {
         var arr = d.split('/');
         if (arr.length != 3)

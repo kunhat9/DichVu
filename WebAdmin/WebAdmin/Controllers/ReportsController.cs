@@ -7,20 +7,23 @@ using System.Web.Mvc;
 
 namespace WebAdmin.Controllers
 {
-    public class ReportsController : Controller
+    public class ReportsController : BaseController
     {
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Revenue()
+        public ActionResult Revenue(string startDate ="", string endDate ="")
         {
             List<V_Revenue> list = new List<V_Revenue>();
-            list.Add(new V_Revenue { sMonth = 1, Cost = 100000, Revenue = 200000 });
-            list.Add(new V_Revenue { sMonth = 2, Cost = 200000, Revenue = 100000 });
-            list.Add(new V_Revenue { sMonth = 3, Cost = 100000, Revenue = 300000 });
-            list.Add(new V_Revenue { sMonth = 4, Cost = 150000, Revenue = 150000 });
+            try
+            {
+                list = Registers_Service.ReportChart("","",startDate,endDate);
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
             return View(list);
         }
     }

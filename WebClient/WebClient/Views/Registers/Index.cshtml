@@ -150,7 +150,9 @@
             if (result.Code == "0") {
                 //toastr.success(result.Result);
                 toastr.success('Đăng ký thành công, chúng tôi sẽ liên hệ với bạn sau khi xét duyệt.');
-                //location.href = "/Products/SupplierList";
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
             } else {
                 toastr.info(result.Result);
             }

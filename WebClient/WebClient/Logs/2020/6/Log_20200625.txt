@@ -1,9 +1,0 @@
-03:23:59
-192.168.186.2
-UpdatePassword :
-Collection was modified; enumeration operation may not execute.
-System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
-   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
-   at System.Collections.Generic.List`1.Enumerator.MoveNextRare()
-   at System.Collections.Generic.List`1.Enumerator.MoveNext()
-   at WebClient.Controllers.AjaxController.RemoveFromCart(String productCode) in C:\Users\Nothing\Desktop\DichVu\WebClient\WebClient\Controllers\AjaxController.cs:line 165
