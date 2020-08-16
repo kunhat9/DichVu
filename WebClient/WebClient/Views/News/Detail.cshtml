@@ -15,21 +15,31 @@
             <li itemtype="http://shema.org/Breadcrumb" itemscope="" class="icon-li">
                 <a title="Tin tức" href="/News" itemprop="url"><span itemprop="title">Tin tức</span></a>
             </li>
-            <li class="icon-li"><strong>@Model.BlogName.ToUpper()</strong> </li>
+            @if (Model != null)
+            {
+                <li class="icon-li"><strong>@Model.BlogName.ToUpper()</strong></li>
+            }
         </ul>
     </div>
     <script type="text/javascript">
         $(".link-site-more").hover(function () { $(this).find(".s-c-n").show(); }, function () { $(this).find(".s-c-n").hide(); });
     </script>
-    <div class="news-detail">
-        <div class="news-block">
-            <h1>@Model.BlogName.ToUpper()</h1>
-            <div class="date">@Model.BlogDateCreate.ToString("dd/MM/yyyy")</div>
-            <div class="content">
-                @Model.BlogContent
+    @if (Model == null)
+    {
+        <div class="news-detail">Dữ liệu không hợp lệ</div>
+    }
+    else
+    {
+        <div class="news-detail">
+            <div class="news-block">
+                <h1>@Model.BlogName.ToUpper()</h1>
+                <div class="date">@Model.BlogDateCreate.ToString("dd/MM/yyyy")</div>
+                <div class="content">
+                    @Model.BlogContent
+                </div>
             </div>
         </div>
-    </div>
+    }
 </div>
 <div class="col-md-3">
     <div class="menu-news">

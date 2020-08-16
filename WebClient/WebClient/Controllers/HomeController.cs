@@ -108,11 +108,21 @@ namespace WebClient.Controllers
 
                 List<TB_FILES> file = Files_Service.GetAll().Where(x => x.FileType == "SERVICE").ToList();
                 ViewBag.Files = file;
-                List<TB_FILES> fileSlider = Files_Service.GetAll().Where(x => x.FileType == "SLIDER").ToList();
+
+                //List<TB_FILES> fileSlider = Files_Service.GetAll().Where(x => x.FileType == "SLIDER").ToList();
+                //ViewBag.FileSlider = fileSlider;
+
+                //List<TB_SLIDERS> listSlider = new List<TB_SLIDERS>();
+                //listSlider = Slider_Service.GetAll().Take(5).ToList();
+                //ViewBag.Slider = listSlider;
+
+                List<TB_FILES> fileSlider = Files_Service.GetAll().Where(x => x.FileType == "BLOG").ToList();
                 ViewBag.FileSlider = fileSlider;
-                List<TB_SLIDERS> listSlider = new List<TB_SLIDERS>();
-                listSlider = Slider_Service.GetAll().Take(5).ToList();
+
+                List<TB_BLOGS> listSlider = new List<TB_BLOGS>();
+                listSlider = Blogs_Service.GetAll().Where(x => x.BlogType == "KM" && x.BlogIsShow).Take(5).ToList();
                 ViewBag.Slider = listSlider;
+
                 return View(list);
             }
             catch (Exception ex)

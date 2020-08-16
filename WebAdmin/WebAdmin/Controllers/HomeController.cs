@@ -142,9 +142,9 @@ namespace WebAdmin.Controllers
                 , new SYS_ACTIONS { Id = "22", Name = "Danh sách Bài viết", IsModule = false, IsRoot = false, IsShow = true
                     , ControlPath = "/Blogs/Index", ParentId = "21" }
 
-                , new SYS_ACTIONS { Id = "31", Name = "Quản lý Slider", IsModule = true, IsRoot = true, IsShow = true }
-                , new SYS_ACTIONS { Id = "32", Name = "Danh sách Slider", IsModule = false, IsRoot = false, IsShow = true
-                    , ControlPath = "/Sliders/Index", ParentId = "31" }
+                //, new SYS_ACTIONS { Id = "31", Name = "Quản lý Slider", IsModule = true, IsRoot = true, IsShow = true }
+                //, new SYS_ACTIONS { Id = "32", Name = "Danh sách Slider", IsModule = false, IsRoot = false, IsShow = true
+                //    , ControlPath = "/Sliders/Index", ParentId = "31" }
 
                 , new SYS_ACTIONS { Id = "41", Name = "Quản lý Dịch vụ", IsModule = true, IsRoot = true, IsShow = true }
                 , new SYS_ACTIONS { Id = "42", Name = "Danh sách Loại dịch vụ", IsModule = false, IsRoot = false, IsShow = true
