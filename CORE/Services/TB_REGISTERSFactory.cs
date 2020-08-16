@@ -20,6 +20,19 @@ namespace CORE.Services
         {
             return new TB_REGISTERSSql().Update(register);
         }
+        public bool UpdateStatus(int registerId, string status)
+        {
+            string ecode, edesc;
+            TB_REGISTERSSql sql = new TB_REGISTERSSql();
+            sql.SelectFromStore(out ecode, out edesc, AppSettingKeys.SP_UPDATE_STATUS_SERVICE, registerId, status);
+            if (ecode.Equals("00"))
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
         public bool Delte(int registerId)
         {
             return new TB_REGISTERSSql().Delete(registerId);

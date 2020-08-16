@@ -919,8 +919,7 @@ namespace WebAdmin.Controllers
             {
                 TB_REGISTERS t = Registers_Service.GetById(reg_id);
                 t.RegisterStatus = reg_status;
-
-                if (Registers_Service.Update(t))
+                if (Registers_Service.UpdateStatus(t.RegisterId,reg_status))
                 {
                     Result.Code = 000;
                     Result.Result = "Thành công";
