@@ -290,7 +290,11 @@
             return;
         }
         var group = $('#lbgroup').val();
-        window.location = '/Products/Search?group=' + group + '&key=' + key;
+        if (!group) {
+            window.location = '/Services/Search?key=' + key;
+        } else {
+            window.location = '/Services/Search?group=' + group + '&key=' + key;
+        }
     }
     $(window).scroll(function () {
         var scrollTop = $(window).scrollTop();

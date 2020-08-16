@@ -49,7 +49,7 @@ namespace WebClient.Controllers
 
             List<TB_SERVICES> services = Services_Service.GetAll()
                 .Where(x => x.ServiceStatus == "A" && (string.IsNullOrEmpty(key) || x.ServiceName.IndexOf(key) > -1)
-                    && types.Select(y => y.TypeCode).Contains(x.ServiceTypeCode)).ToList();
+                    && (string.IsNullOrEmpty(group) || types.Select(y => y.TypeCode).Contains(x.ServiceTypeCode))).ToList();
             ViewBag.Services = services;
 
             ViewBag.Group = group;
