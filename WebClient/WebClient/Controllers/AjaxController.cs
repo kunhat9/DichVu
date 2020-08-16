@@ -62,7 +62,7 @@ namespace WebClient.Controllers
 
         #endregion
 
-        public JsonResult Register(int reg_service, string reg_datebegin, string reg_number, string reg_name, string reg_email, string reg_phone,string reg_note, string menuId , List<MenuModel> listMenu, string voucher, string reg_table)
+        public JsonResult Register(int reg_service, string reg_datebegin, string reg_number, string reg_name, string reg_email, string reg_phone, string reg_note, string menuId, List<MenuModel> listMenu, string voucher, string reg_table)
         {
             AjaxResultModel Result = new AjaxResultModel();
 
@@ -78,7 +78,7 @@ namespace WebClient.Controllers
                     }
 
                 }
-                string result = Registers_Service.RegisterService( reg_service,  reg_datebegin,  reg_number,  reg_name,  reg_email,  reg_phone,  reg_note, reg_user,  menuId, menu, voucher, reg_table);
+                string result = Registers_Service.RegisterService(reg_service, reg_datebegin, reg_number, reg_name, reg_email, reg_phone, reg_note, reg_user, menuId, menu, voucher, reg_table);
                 if (result.Equals("00"))
                 {
                     Result.Code = 000;
@@ -175,6 +175,54 @@ namespace WebClient.Controllers
             {
                 Result.Code = 2000;
                 Result.Result = "Có lỗi xảy ra. Vui lòng thử lại sau hoặc liên hệ với người quản trị.";
+                CORE.Helpers.IOHelper.WriteLog(StartUpPath, IpAddress, "UpdatePassword :", Ex.Message, Ex.ToString());
+            }
+
+            return Json(Result);
+        }
+
+        public JsonResult GetPrice(int serviceId, string code = "", int menuId = 0, int num = 0)
+        {
+            AjaxResultModel Result = new AjaxResultModel();
+            Result.Result = 0;
+
+            try
+            {
+                TB_SERVICES s = Services_Service.GetById(serviceId);
+                decimal p = s.ServicePrice;
+
+                if (!string.IsNullOrEmpty(code))
+                {
+                    TB_VOUCHERS v = Voucher_Service.GetByCode(code);
+                    if (v != null && v.VoucherDateExpired.Date >= DateTime.Now.Date && v.VoucherState == "A")
+                    {
+                        if (v.VoucherType == "M")//Giảm tiền
+                        {
+                            p = p - v.VoucherNum;
+                        }
+                        else if (v.VoucherType == "P")//Giảm phần trăm
+                        {
+                            p = p * (100 - v.VoucherNum) / 100;
+                        }
+                    }
+                }
+
+                if (num > 0 && menuId > 0)
+                {
+                    TB_MENUS m = Menu_Service.GetById(menuId);
+                    if (m != null)
+                    {
+                        p += m.MenuPrice * num;
+                    }
+                }
+
+                Result.Code = 000;
+                Result.Result = string.Format("{0:N0}", p);
+            }
+            catch (Exception Ex)
+            {
+                Result.Code = 2000;
+                Result.Result = 0;
                 CORE.Helpers.IOHelper.WriteLog(StartUpPath, IpAddress, "UpdatePassword :", Ex.Message, Ex.ToString());
             }
 

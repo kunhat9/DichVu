@@ -45,7 +45,7 @@
                     </div>
                     <h2 class="title">Danh sách thực đơn</h2>
                     <div class="form-block">
-                        <div class="form-group"><input class="form-control" placeholder="Số bàn" type="number" id="REG_MENUNUMBER"></div>
+                        <div class="form-group"><input class="form-control" placeholder="Số bàn" type="number" oninput="getPrice()" id="REG_MENUNUMBER"></div>
                         <div class="form-group" id="REG_MENU">
                             @{ Html.RenderAction("_MenuGroup", "Menus", new { serviceId = selected }); }
                         </div>
@@ -78,7 +78,7 @@
                             }*@
                         </div>
                         <div class="total-price">
-                            Thành tiền  <label>@*@string.Format("{0:N0}", Model.Sum(x => x.Price * x.Quantity))đ*@</label>
+                            Thành tiền  <label id="viewPrice">0@*@string.Format("{0:N0}", Model.Sum(x => x.Price * x.Quantity))đ*@</label>
                         </div>
                         <div class="btn-coupon hidden">
                             <a href="#" class="btn btn-primary"><span></span>Sử dụng mã giảm giá </a>
@@ -86,7 +86,7 @@
                         <div class="use-coupon">
                             <div class="form-group">
                                 <input placeholder="Nhập mã giảm giá" class="coupon-code form-control" id="voucher">
-                                <a class="btn btn-primary">Sử dụng</a>
+                                <a class="btn btn-primary" onclick="getPrice()">Sử dụng</a>
                             </div>
                         </div>
                         <div class="total-payment">
@@ -115,6 +115,23 @@
             data: { "serviceId": $('#REG_SERVICE :selected').val() },
         }).done(function (result) {
             $('#REG_MENU').html(result);
+            $('#MENU_DETAIL').html('');
+            getPrice();
+        });
+    }
+
+    function getPrice() {
+        $.ajax({
+            url: "/Ajax/GetPrice",
+            type: "post",
+            data: {
+                "serviceId": $('#REG_SERVICE :selected').val(),
+                "code": $('#voucher').val(),
+                "menuId": localStorage.getItem("menuId"),
+                "num": $('#REG_MENUNUMBER').val()
+            },
+        }).done(function (result) {
+            $('#viewPrice').html(result.Result);
         });
     }
 

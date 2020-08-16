@@ -123,7 +123,7 @@ namespace WebClient.Controllers
         protected TB_ORDERSFactory Orders_Service = new TB_ORDERSFactory();
         protected TB_MENUSFactory Menu_Service = new TB_MENUSFactory();
         protected TB_SLIDERSFactory Slider_Service = new TB_SLIDERSFactory();
-       
+        protected TB_VOUCHERSFactory Voucher_Service = new TB_VOUCHERSFactory();
 
         #endregion
 

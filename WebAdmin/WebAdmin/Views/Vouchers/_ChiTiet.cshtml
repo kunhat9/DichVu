@@ -4,6 +4,8 @@
     if (voucher == null)
     {
         voucher = new CORE.Tables.TB_VOUCHERS();
+        voucher.VoucherDateCreate = DateTime.Now;
+        voucher.VoucherDateExpired = DateTime.Now;
     }
     List<CORE.Tables.TB_SERVICES> list = ViewBag.ListService;
 }
@@ -28,13 +30,13 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Ngày bắt đầu</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control pickadate" placeholder="Ngày bắt đầu" value="@voucher.VoucherDateCreate.ToString("dd/MM/yyyy")" id="VoucherDateCreate">
+                                <input type="date" class="form-control pickadate" placeholder="Ngày bắt đầu" value="@voucher.VoucherDateCreate.ToString("yyyy-MM-dd")" id="VoucherDateCreate">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Ngày kết thúc</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control pickadate" placeholder="Ngày bắt đầu" value="@voucher.VoucherDateExpired.ToString("dd/MM/yyyy")" id="VoucherDateExpired">
+                                <input type="date" class="form-control pickadate" placeholder="Ngày bắt đầu" value="@voucher.VoucherDateExpired.ToString("yyyy-MM-dd")" id="VoucherDateExpired">
 
                             </div>
                         </div>
@@ -43,9 +45,8 @@
                             <div class="col-md-6">
                                 <select class="form-control select-search" id="VoucherType">
                                     <option value="">Kiểu khuyến mại</option>
-                                    <option value="M">Phần trăm</option>
-                                    <option value="P">Giảm tiền</option>
-
+                                    <option value="M" @if (voucher.VoucherType == "M") {<text>selected</text>}>Phần trăm</option>
+                                    <option value="P" @if (voucher.VoucherType == "P") {<text>selected</text>}>Giảm tiền</option>
                                 </select>
                             </div>
                         </div>
@@ -119,7 +120,7 @@
       , VoucherDateCreate: convertDate($('#VoucherDateCreate').val())
       , VoucherDateExpired: convertDate($('#VoucherDateExpired').val())
       , VoucherNum: $('#VoucherNum').val()
-      , VoucherType: $('#VoucherType').val()
+      , VoucherType: $('#VoucherType :selected').val()
       , VoucherLimited: $('#VoucherLimited').val()
       , VoucherState: $('#VoucherState').val()
       , VoucherNote: $('#VoucherNote').val()

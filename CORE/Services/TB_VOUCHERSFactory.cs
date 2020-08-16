@@ -12,7 +12,7 @@ namespace CORE.Services
     {
         public bool Insert(TB_VOUCHERS voucher)
         {
-            return new TB_VOUCHERSSql().Insert(voucher,true);
+            return new TB_VOUCHERSSql().Insert(voucher, true);
         }
         public bool Update(TB_VOUCHERS voucher)
         {
@@ -25,6 +25,11 @@ namespace CORE.Services
         public List<TB_VOUCHERS> GetAll()
         {
             return new TB_VOUCHERSSql().SelectAll();
+        }
+
+        public TB_VOUCHERS GetByCode(string code)
+        {
+            return new TB_VOUCHERSSql().SelectAll().Where(x => x.VoucherCode == code).FirstOrDefault();
         }
     }
 }

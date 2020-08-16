@@ -67,6 +67,9 @@
             var html = '<h2 class="title">' + name + '</h2>';
             html += '<div class="form-block">' + result + '</div>';
             $('#MENU_DETAIL').html(html);
+            if (typeof(getPrice) == 'function'){
+                getPrice();
+            }
         });
     }
 </script>
