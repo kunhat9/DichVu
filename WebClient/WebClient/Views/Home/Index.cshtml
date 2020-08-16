@@ -129,7 +129,7 @@
 </div>
 <!-- Dịch vụ: END -->
 <!-- Tiện ích: BEGIN -->
-<div data-vc-full-width="true" data-vc-full-width-init="true" class="row wpb_row row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp custom_1527063715329 row-has-fill wpb_start_animation animated"
+<div data-vc-full-width="true" data-vc-full-width-init="true" class="col-md-12"
      style="left: -145px; position: relative; box-sizing: border-box; width: 1519px; padding-left: 145px; padding-right: 144px;">
     <div class="wpb_column column_container col-sm-12">
         <div class="column-inner">
@@ -283,7 +283,11 @@
             return;
         }
         var group = $('#lbgroup').val();
-        window.location = '/Products/Search?group=' + group + '&key=' + key;
+        if (!group) {
+            window.location = '/Services/Search?key=' + key;
+        } else {
+            window.location = '/Services/Search?group=' + group + '&key=' + key;
+        }
     }
     $(window).scroll(function () {
         var scrollTop = $(window).scrollTop();
