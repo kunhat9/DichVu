@@ -103,8 +103,12 @@ namespace WebClient.Controllers
         {
             try
             {
-                List<TB_SERVICES> list = Services_Service.GetAll().Where(x=>x.ServiceStatus.Equals("A")).ToList();
+                List<TB_SERVICES> list = Services_Service.GetAll().Where(x => x.ServiceStatus.Equals("A")).ToList();
                 if (list == null) list = new List<TB_SERVICES>();
+
+                List<TB_TYPES> type = Types_Service.GetAll();
+                if (type == null) type = new List<TB_TYPES>();
+                ViewBag.Types = type;
 
                 List<TB_FILES> file = Files_Service.GetAll().Where(x => x.FileType == "SERVICE").ToList();
                 ViewBag.Files = file;
