@@ -29,6 +29,11 @@ namespace WebClient.Controllers
         public ActionResult Detail(int Id = 0)
         {
             TB_BLOGS b = Blogs_Service.GetById(Id);
+
+            List<TB_FILES> file = Files_Service.GetAll().Where(x => x.FileType == "BLOG").ToList();
+            if (file == null) file = new List<TB_FILES>();
+            ViewBag.Files = file;
+
             return View(b);
         }
     }

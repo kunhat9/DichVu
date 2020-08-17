@@ -1,9 +1,11 @@
 ﻿@using CORE.Tables
-
+@using WebClient.Configuration
 @model TB_BLOGS
 @{
     ViewBag.Title = "Tin tức";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+    List<TB_FILES> files = ViewBag.Files;
 }
 
 <div class="col-md-9">
@@ -34,6 +36,9 @@
             <div class="news-block">
                 <h1>@Model.BlogName.ToUpper()</h1>
                 <div class="date">@Model.BlogDateCreate.ToString("dd/MM/yyyy")</div>
+                <div>
+                    <img class="img-responsive" style="width: 100%;height: 300px;" src="@(AppConfigInfo.Images + files.Where(x=>x.FileReferenceId==""+Model.BlogId).Select(x=>x.FilePath).FirstOrDefault())" alt="@Model.BlogName" title="@Model.BlogName">
+                </div>
                 <div class="content">
                     @Model.BlogContent
                 </div>
