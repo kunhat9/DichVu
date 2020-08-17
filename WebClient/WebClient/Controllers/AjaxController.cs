@@ -181,7 +181,7 @@ namespace WebClient.Controllers
             return Json(Result);
         }
 
-        public JsonResult GetPrice(int serviceId, string code = "", int menuId = 0, int num = 0)
+        public JsonResult GetPrice(int serviceId, int serviceNum, string code = "", int menuId = 0, int num = 0)
         {
             AjaxResultModel Result = new AjaxResultModel();
             Result.Result = 0;
@@ -189,7 +189,7 @@ namespace WebClient.Controllers
             try
             {
                 TB_SERVICES s = Services_Service.GetById(serviceId);
-                decimal p = s.ServicePrice;
+                decimal p = s.ServicePrice * serviceNum;
 
                 if (!string.IsNullOrEmpty(code))
                 {
@@ -218,6 +218,29 @@ namespace WebClient.Controllers
 
                 Result.Code = 000;
                 Result.Result = string.Format("{0:N0}", p);
+            }
+            catch (Exception Ex)
+            {
+                Result.Code = 2000;
+                Result.Result = 0;
+                CORE.Helpers.IOHelper.WriteLog(StartUpPath, IpAddress, "UpdatePassword :", Ex.Message, Ex.ToString());
+            }
+
+            return Json(Result);
+        }
+
+        public JsonResult GetUnitPrice(int serviceId)
+        {
+            AjaxResultModel Result = new AjaxResultModel();
+            Result.Result = "0 VND";
+
+            try
+            {
+                TB_SERVICES s = Services_Service.GetById(serviceId);
+                TB_TYPES t = Types_Service.GetById(s.ServiceTypeCode);
+
+                Result.Code = 000;
+                Result.Result = new { type = t.TypeType, price = string.Format("{0:N0}", s.ServicePrice) + " " + s.ServiceUnit };
             }
             catch (Exception Ex)
             {

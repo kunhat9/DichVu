@@ -40,12 +40,22 @@
                                 }
                             </select>
                         </div>
-                        <div class="form-group"><input class="form-control" placeholder="Ngày bắt đầu" type="date" id="REG_DATEBEGIN"></div>
-                        <div class="form-group"><input class="form-control" placeholder="Số ngày sử dụng" type="number" id="REG_DATENUMBER"></div>
+                        <div class="form-group">
+                            <span id="unitPrice">Đơn giá: 0 VND</span>
+                        </div>
+                        <div class="input-group" style="margin-bottom: 15px;">
+                            <span class="input-group-addon">Ngày sử dụng</span>
+                            <input class="form-control" placeholder="Ngày bắt đầu" type="date" id="REG_DATEBEGIN">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Số gói sử dụng" oninput="getPrice()" type="number" id="REG_DATENUMBER">
+                        </div>
                     </div>
-                    <h2 class="title">Danh sách thực đơn</h2>
-                    <div class="form-block">
-                        <div class="form-group"><input class="form-control" placeholder="Số bàn" type="number" oninput="getPrice()" id="REG_MENUNUMBER"></div>
+                    <h2 class="title menuInfor">Danh sách thực đơn</h2>
+                    <div class="form-block menuInfor">
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Số bàn" type="number" oninput="getPrice()" id="REG_MENUNUMBER">
+                        </div>
                         <div class="form-group" id="REG_MENU">
                             @{ Html.RenderAction("_MenuGroup", "Menus", new { serviceId = selected }); }
                         </div>
@@ -104,11 +114,35 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-
         localStorage.removeItem("dataMenuSelect");
         localStorage.removeItem("menuId");
+        $.ajax({
+            url: "/Ajax/GetUnitPrice",
+            type: "post",
+            data: {
+                "serviceId": $('#REG_SERVICE :selected').val()
+            },
+        }).done(function (result) {
+            $('#unitPrice').html('Đơn giá: ' + result.Result);
+        });
     });
     function selectService() {
+        $.ajax({
+            url: "/Ajax/GetUnitPrice",
+            type: "post",
+            data: {
+                "serviceId": $('#REG_SERVICE :selected').val()
+            },
+        }).done(function (result) {
+            console.log(result.Result);
+            $('#unitPrice').html('Đơn giá: ' + result.Result.price);
+            if (result.Result.type == 'SK') {
+                $('.menuInfor').show();
+            } else {
+                $('.menuInfor').hide();
+            }
+        });
+
         $.ajax({
             url: "/Menus/_MenuGroup",
             type: "post",
@@ -126,9 +160,10 @@
             type: "post",
             data: {
                 "serviceId": $('#REG_SERVICE :selected').val(),
+                "serviceNum": $('#REG_DATENUMBER').val() || 0,
                 "code": $('#voucher').val(),
-                "menuId": localStorage.getItem("menuId"),
-                "num": $('#REG_MENUNUMBER').val()
+                "menuId": localStorage.getItem("menuId") || 0,
+                "num": $('#REG_MENUNUMBER').val() || 0
             },
         }).done(function (result) {
             $('#viewPrice').html(result.Result);
